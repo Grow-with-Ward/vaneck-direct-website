@@ -32,8 +32,8 @@ export default function WalkThrough() {
           </div>
         </div>
         <div>
-          <p className="text-xl text-[#2e5eaa]">Ga er rustig voor zitten -</p>
-          <h2 className="mt-1 text-4xl font-bold leading-tight text-[#1a2b6b] md:text-5xl">
+          <p className="text-xl text-[#17468f]">Ga er rustig voor zitten -</p>
+          <h2 className="font-heading mt-1 text-4xl font-bold leading-tight text-[#0e3065] md:text-[50px] md:leading-[1.1]">
             dan lopen we alles samen door.
           </h2>
           <p className="mt-6 max-w-lg text-base leading-relaxed text-[#4a5568]">

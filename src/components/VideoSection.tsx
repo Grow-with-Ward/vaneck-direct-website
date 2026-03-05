@@ -1,9 +1,9 @@
 export default function VideoSection() {
   return (
-    <section className="relative overflow-hidden bg-[#1a2b6b] py-0">
+    <section className="relative overflow-hidden bg-[#0e3065] py-0">
       <div className="relative mx-auto flex aspect-video max-w-7xl items-center justify-center">
         {/* Video placeholder with dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a2b6b]/80 to-[#0f1d4d]/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0e3065]/80 to-[#0a1f45]/90" />
         <div
           className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{

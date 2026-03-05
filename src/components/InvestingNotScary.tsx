@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function InvestingNotScary() {
   return (
-    <section className="bg-[#f5f7fb] py-20">
+    <section className="bg-[#f2f3f7] py-20">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
         <div className="flex justify-center">
           <Image
@@ -14,11 +14,11 @@ export default function InvestingNotScary() {
           />
         </div>
         <div>
-          <h2 className="text-4xl font-bold leading-tight text-[#1a2b6b] md:text-5xl">
+          <h2 className="font-heading text-4xl font-bold leading-tight text-[#0e3065] md:text-[50px] md:leading-[1.1]">
             Beleggen is niet eng
           </h2>
           <div className="mt-8">
-            <p className="font-bold text-[#1a2b6b]">
+            <p className="font-bold text-[#0e3065]">
               Beleggen wordt soms heel ingewikkeld of spannend gemaakt
             </p>
             <div className="mt-4 space-y-3">
@@ -37,7 +37,7 @@ export default function InvestingNotScary() {
             </div>
           </div>
           <div className="mt-8">
-            <p className="font-bold text-[#1a2b6b]">
+            <p className="font-bold text-[#0e3065]">
               Bij VanEck Direct houden we het simpel met:
             </p>
             <div className="mt-4 space-y-3">

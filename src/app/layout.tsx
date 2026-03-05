@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Merriweather, Open_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const merriweather = Merriweather({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "700"],
+  variable: "--font-merriweather",
+});
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-open-sans",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="nl">
-      <body className={`${inter.variable} antialiased font-sans`}>
+      <body className={`${merriweather.variable} ${openSans.variable} antialiased`}>
         {children}
       </body>
     </html>

@@ -22,11 +22,11 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 lg:flex">
-          <a href="#" className="text-sm font-medium text-[#1a2b6b] hover:text-[#0f1d4d]">
+          <a href="#" className="text-[17px] text-[#1f2c3d] hover:text-[#0e3065]">
             Hoe werkt het?
           </a>
           <div className="group relative">
-            <button className="flex items-center gap-1 text-sm font-medium text-[#1a2b6b] hover:text-[#0f1d4d]">
+            <button className="flex items-center gap-1 text-[17px] text-[#1f2c3d] hover:text-[#0e3065]">
               Rendement &amp; Kosten
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -34,17 +34,17 @@ export default function Header() {
             </button>
           </div>
           <div className="group relative">
-            <button className="flex items-center gap-1 text-sm font-medium text-[#1a2b6b] hover:text-[#0f1d4d]">
+            <button className="flex items-center gap-1 text-[17px] text-[#1f2c3d] hover:text-[#0e3065]">
               Support
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
           </div>
-          <a href="#" className="text-sm font-medium text-[#1a2b6b] hover:text-[#0f1d4d]">
+          <a href="#" className="text-[17px] text-[#1f2c3d] hover:text-[#0e3065]">
             Over ons
           </a>
-          <a href="#" className="text-sm font-medium text-[#1a2b6b] hover:text-[#0f1d4d]">
+          <a href="#" className="text-[17px] text-[#1f2c3d] hover:text-[#0e3065]">
             Contact
           </a>
         </nav>
@@ -52,14 +52,14 @@ export default function Header() {
         {/* CTA Button */}
         <a
           href="#"
-          className="hidden rounded-full bg-[#00b341] px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#009a38] lg:block"
+          className="hidden rounded-[20px] bg-[#0ab400] px-[25px] py-[12px] text-sm font-semibold text-white transition-colors hover:bg-[#099a00] lg:block"
         >
           Download de app
         </a>
 
         {/* Mobile menu button */}
         <button className="lg:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          <svg className="h-6 w-6 text-[#1a2b6b]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="h-6 w-6 text-[#1f2c3d]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
@@ -68,12 +68,12 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="border-t bg-white px-6 py-4 lg:hidden">
           <nav className="flex flex-col gap-4">
-            <a href="#" className="text-sm font-medium text-[#1a2b6b]">Hoe werkt het?</a>
-            <a href="#" className="text-sm font-medium text-[#1a2b6b]">Rendement &amp; Kosten</a>
-            <a href="#" className="text-sm font-medium text-[#1a2b6b]">Support</a>
-            <a href="#" className="text-sm font-medium text-[#1a2b6b]">Over ons</a>
-            <a href="#" className="text-sm font-medium text-[#1a2b6b]">Contact</a>
-            <a href="#" className="mt-2 inline-block rounded-full bg-[#00b341] px-6 py-2.5 text-center text-sm font-semibold text-white">
+            <a href="#" className="text-[17px] text-[#1f2c3d]">Hoe werkt het?</a>
+            <a href="#" className="text-[17px] text-[#1f2c3d]">Rendement &amp; Kosten</a>
+            <a href="#" className="text-[17px] text-[#1f2c3d]">Support</a>
+            <a href="#" className="text-[17px] text-[#1f2c3d]">Over ons</a>
+            <a href="#" className="text-[17px] text-[#1f2c3d]">Contact</a>
+            <a href="#" className="mt-2 inline-block rounded-[20px] bg-[#0ab400] px-[25px] py-[12px] text-center text-sm font-semibold text-white">
               Download de app
             </a>
           </nav>

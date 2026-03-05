@@ -2,7 +2,7 @@ export default function CostsSection() {
   return (
     <section className="py-20">
       <div className="mx-auto max-w-4xl px-6 text-center">
-        <h2 className="text-3xl font-light leading-tight text-gray-400 md:text-5xl">
+        <h2 className="font-heading text-3xl font-light leading-tight text-gray-400 md:text-5xl">
           Lage en simpele{" "}
           <span className="underline decoration-gray-400">kosten</span>:
           <br />
@@ -20,7 +20,7 @@ export default function CostsSection() {
         </p>
 
         {/* Cost CTA Banner */}
-        <div className="mx-auto mt-12 flex flex-col items-center justify-between gap-4 rounded-2xl bg-[#1a2b6b] px-8 py-6 md:flex-row">
+        <div className="mx-auto mt-12 flex flex-col items-center justify-between gap-4 rounded-2xl bg-[#0e3065] px-8 py-6 md:flex-row">
           <p className="text-left text-sm text-white md:text-base">
             Weten wat dit voor jou betekent?
             <br />
@@ -28,7 +28,7 @@ export default function CostsSection() {
           </p>
           <a
             href="#"
-            className="shrink-0 rounded-full border-2 border-white px-8 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#1a2b6b]"
+            className="shrink-0 rounded-full border-2 border-white px-8 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#0e3065]"
           >
             Naar overzicht
           </a>

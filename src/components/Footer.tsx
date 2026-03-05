@@ -64,7 +64,7 @@ export default function Footer() {
           <p className="mt-2 text-[11px] leading-relaxed text-gray-500">&copy; VanEck Asset Management B.V.</p>
         </div>
       </div>
-      <div className="bg-[#1a2b6b] py-8">
+      <div className="bg-[#0e3065] py-8">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
             <div>

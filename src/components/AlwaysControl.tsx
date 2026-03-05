@@ -5,7 +5,7 @@ export default function AlwaysControl() {
     <section className="py-20">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
         <div>
-          <h2 className="text-4xl font-bold italic leading-tight text-[#1a2b6b] md:text-5xl">
+          <h2 className="font-heading text-4xl font-bold italic leading-tight text-[#0e3065] md:text-[50px] md:leading-[1.1]">
             Altijd controle
             <br />
             via de app

@@ -1,14 +1,17 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-vaneck-blue: #1a2b6b;
-  --color-vaneck-dark: #0f1d4d;
-  --color-vaneck-green: #2ecc40;
-  --color-vaneck-cta: #00b341;
-  --color-vaneck-light: #f5f7fb;
+  --color-vaneck-blue: #0e3065;
+  --color-vaneck-dark: #211f54;
+  --color-vaneck-hero: #1f2c3d;
+  --color-vaneck-green: #0ab400;
+  --color-vaneck-cta: #0ab400;
+  --color-vaneck-light: #f2f3f7;
   --color-vaneck-gray: #6b7280;
   --color-vaneck-orange: #e67e22;
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --color-vaneck-link: #17468f;
+  --font-sans: var(--font-open-sans), "Open Sans", system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-merriweather), "Merriweather", Georgia, serif;
 }
 
 html {
@@ -17,6 +20,10 @@ html {
 
 body {
   background: #ffffff;
-  color: #1a2b6b;
+  color: #333333;
   font-family: var(--font-sans);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
 }

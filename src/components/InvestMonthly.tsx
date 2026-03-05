@@ -5,7 +5,7 @@ export default function InvestMonthly() {
     <section className="py-20">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
         <div>
-          <h2 className="text-3xl font-bold leading-tight text-[#1a2b6b] md:text-4xl lg:text-5xl">
+          <h2 className="font-heading text-3xl font-bold leading-tight text-[#211f54] md:text-4xl lg:text-[48px] lg:leading-[1.1]">
             Investeer elke maand automatisch in je toekomst
           </h2>
           <p className="mt-6 max-w-lg text-base leading-relaxed text-[#4a5568]">
