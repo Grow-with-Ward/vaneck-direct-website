@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function InvestingNotScary() {
   return (
-    <section className="bg-[#f2f3f7] py-20">
+    <section className="py-20">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
         <div className="flex justify-center">
           <Image

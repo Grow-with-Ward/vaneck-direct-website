@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function TrustedName() {
   return (
-    <section className="bg-[#f0f2f8] py-20">
+    <section className="bg-[#f7f9ff] py-20">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
         <div>
           <h2 className="font-heading text-4xl font-bold leading-tight text-[#211f54] md:text-[56px] md:leading-[1.1]">

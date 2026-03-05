@@ -6,10 +6,10 @@ export default function Hero() {
       <div className="grid items-center gap-12 lg:grid-cols-2">
         {/* Left Content */}
         <div>
-          <h1 className="font-heading text-4xl font-bold leading-tight text-[#1f2c3d] md:text-5xl lg:text-[64px] lg:leading-[70px]">
-            De beleggingsapp
+          <h1 className="text-4xl leading-tight text-[#1f2c3d] md:text-5xl lg:text-[64px] lg:leading-[70px]">
+            <span className="font-heading font-bold">De beleggingsapp</span>
             <br />
-            <span className="font-normal">
+            <span className="font-sans font-normal">
               voor automatisch &amp;
               <br />
               serieus beleggen
