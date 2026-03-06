@@ -1,16 +1,109 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "@/components/PlaceholderPage";
+import Image from "next/image";
+import Link from "next/link";
+import CTASection from "@/components/CTASection";
+import AppScreenshots from "@/components/AppScreenshots";
 
 export const metadata: Metadata = {
-  title: "Demo - VanEck Direct",
-  description: "Bekijk een demo van de VanEck Direct app en ontdek hoe eenvoudig automatisch beleggen is.",
+  title: "Demo | Ontdek hoe de VanEck Direct app werkt",
+  description:
+    "Bekijk een voorproefje van de VanEck Direct beleggingsapp. Ontdek hoe eenvoudig automatisch beleggen kan zijn.",
 };
+
+const valueProps = [
+  "Investeer in jouw toekomst",
+  "Passend bij jouw situatie",
+  "VanEck, een bekende naam, sinds 1955",
+];
 
 export default function DemoPage() {
   return (
-    <PlaceholderPage
-      title="Demo"
-      description="Bekijk een demo van de VanEck Direct app en ontdek hoe eenvoudig automatisch beleggen kan zijn. Verken de functies zonder account."
-    />
+    <>
+      {/* Hero */}
+      <section
+        className="py-16 lg:py-24"
+        style={{
+          background: "linear-gradient(to bottom, #f0f2f8, #ffffff)",
+        }}
+      >
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h1 className="font-heading text-4xl font-bold text-[#211f54] md:text-5xl lg:text-6xl">
+            Nieuwsgierig?
+          </h1>
+          <p className="mt-4 text-lg text-[#4a5568] md:text-xl">
+            Hier is vast een voorproefje
+          </p>
+        </div>
+      </section>
+
+      {/* Value Props */}
+      <section className="py-16 lg:py-24">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            {valueProps.map((prop) => (
+              <div
+                key={prop}
+                className="flex items-start gap-3 rounded-xl bg-[#f7f9ff] p-6"
+              >
+                <Image
+                  src="/images/circle_check.png"
+                  alt="Checkmark"
+                  width={24}
+                  height={24}
+                  className="mt-0.5 flex-shrink-0"
+                />
+                <span className="text-base font-medium text-[#211f54]">
+                  {prop}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Demo Section */}
+      <section className="py-16 lg:py-24">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h2 className="font-heading text-2xl font-bold text-[#211f54] md:text-3xl">
+            Kijk maar even rond in deze demo-app voor een eerste indruk
+          </h2>
+
+          <div className="mt-12 flex justify-center">
+            <Image
+              src="/images/homescreen.png"
+              alt="VanEck Direct app homescreen"
+              width={320}
+              height={640}
+              className="h-auto w-auto drop-shadow-2xl"
+            />
+          </div>
+
+          <div className="mt-10 flex items-center justify-center gap-4">
+            <Link href="/demo">
+              <Image
+                src="/images/app_store.png"
+                alt="Download in de App Store"
+                width={156}
+                height={52}
+                className="h-auto w-auto"
+              />
+            </Link>
+            <Link href="/demo">
+              <Image
+                src="/images/google_play.png"
+                alt="Download via Google Play"
+                width={156}
+                height={52}
+                className="h-auto w-auto"
+              />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA & App Screenshots */}
+      <CTASection />
+      <AppScreenshots />
+    </>
   );
 }

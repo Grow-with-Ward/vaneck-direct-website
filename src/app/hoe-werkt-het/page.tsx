@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "@/components/PlaceholderPage";
+import HoeWerktHetContent from "./HoeWerktHetContent";
+import CTASection from "@/components/CTASection";
+import AppScreenshots from "@/components/AppScreenshots";
 
 export const metadata: Metadata = {
-  title: "Hoe werkt het? - VanEck Direct",
-  description: "Ontdek hoe VanEck Direct werkt: automatisch beleggen in ETFs, eenvoudig via de app.",
+  title: "Hoe werkt het? | Beleggen met de VanEck Direct App",
+  description:
+    "Ontdek hoe VanEck Direct werkt: automatisch beleggen in ETFs, eenvoudig via de app. Bekijk onze 4 ETFs, risicoprofielen en het 6-stappen plan.",
 };
 
 export default function HoeWerktHetPage() {
   return (
-    <PlaceholderPage
-      title="Hoe werkt het?"
-      description="Ontdek hoe VanEck Direct werkt. Wij leggen je stap voor stap uit hoe automatisch beleggen in ETFs werkt en hoe je eenvoudig kunt starten via de app."
-    />
+    <>
+      <HoeWerktHetContent />
+      <CTASection />
+      <AppScreenshots />
+    </>
   );
 }
