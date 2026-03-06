@@ -1,6 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+
+const CDN = "https://cdn.prod.website-files.com/632d69cdf2cfb16b18ae5be1";
 
 const etfs = [
   {
@@ -9,10 +12,12 @@ const etfs = [
     name: "VanEck Aandelen ETF",
     officialName: "VanEck World Equal Weight Screened UCITS ETF",
     riskScore: 4,
+    image: `${CDN}/6718e709bbb61a6cade9f1b0_aandelen-1.png`,
+    riskScoreImage: `${CDN}/6729e51de17a28a2c56e7e3e_afm_dutch_risicoscore_4.png`,
     description:
       "Met dit mandje beleg je automatisch in de 250 grootste en meest liquide bedrijven ter wereld. Al deze bedrijven voldoen aan de verantwoordelijk bedrijfsgedrag principes van de Verenigde Naties.",
     extra:
-      "Daarnaast worden sectoren uitgesloten die niet voldoen aan de normen van maatschappelijk verantwoord ondernemen: alcohol, dierproeven, defensie, wapens, gokken, pornografie, tabak en kernenergie. Voor meer info en het essenti\u00eble-informatiedocument, klik op onderstaande knop.",
+      "Daarnaast worden sectoren uitgesloten die niet voldoen aan de normen van maatschappelijk verantwoord ondernemen: alcohol, dierproeven, defensie, wapens, gokken, pornografie, tabak en kernenergie. Voor meer info en het essentiële-informatiedocument, klik op onderstaande knop.",
     link: "https://www.vaneck.com/nl/nl/tget/",
   },
   {
@@ -21,10 +26,12 @@ const etfs = [
     name: "VanEck Vastgoed ETF",
     officialName: "VanEck Global Real Estate UCITS ETF",
     riskScore: 5,
+    image: `${CDN}/6718e4bf81166902d2d3c6cd_vastgoed-1.png`,
+    riskScoreImage: `${CDN}/6729e51d8d4f1a395f461bfb_afm_dutch_risicoscore_5.png`,
     description:
       "Met dit mandje beleg je automatisch in een wereldwijd gespreide vastgoedportefeuille met de 100 grootste beursgenoteerde vastgoedaandelen.",
     extra:
-      "Je belegt dan in onder andere deze vastgoedsectoren: Woningen, Kantoren, Industrieel vastgoed, Hotels, Gezondheidszorg en Winkelvastgoed. Voor meer info en het essenti\u00eble-informatiedocument, klik op onderstaande knop.",
+      "Je belegt dan in onder andere deze vastgoedsectoren: Woningen, Kantoren, Industrieel vastgoed, Hotels, Gezondheidszorg en Winkelvastgoed. Voor meer info en het essentiële-informatiedocument, klik op onderstaande knop.",
     link: "https://www.vaneck.com/nl/nl/tret/",
   },
   {
@@ -33,10 +40,12 @@ const etfs = [
     name: "VanEck bedrijfsobligaties ETF",
     officialName: "VanEck iBoxx EUR Corporates UCITS ETF",
     riskScore: 3,
+    image: `${CDN}/6718e709003a9173ba2036eb_bedrijfsobligaties.png`,
+    riskScoreImage: `${CDN}/6729e51d0ca7cbe916802458_afm_dutch_risicoscore_3.png`,
     description:
       "Met dit mandje beleg je automatisch in de 40 grootste en meest verhandelbare euro-bedrijfsobligaties met een goede kredietwaardigheid.",
     extra:
-      "Bij het selecteren van deze obligaties worden ESG-criteria (milieu, maatschappij en bestuur) in overweging genomen. Op deze manier kun je investeren op een manier die rekening houdt met duurzaamheid. Voor meer info en het essenti\u00eble-informatiedocument, klik op onderstaande knop.",
+      "Bij het selecteren van deze obligaties worden ESG-criteria (milieu, maatschappij en bestuur) in overweging genomen. Op deze manier kun je investeren op een manier die rekening houdt met duurzaamheid. Voor meer info en het essentiële-informatiedocument, klik op onderstaande knop.",
     link: "https://www.vaneck.com/nl/nl/tcbt/",
   },
   {
@@ -45,10 +54,12 @@ const etfs = [
     name: "VanEck staatsobligaties ETF",
     officialName: "VanEck iBoxx EUR Sovereign Diversified 1-10 UCITS ETF",
     riskScore: 2,
+    image: `${CDN}/6718e70b5b19546b979541ca_Staatsobligaties-1.png`,
+    riskScoreImage: `${CDN}/6729e51d399417aa09070c3c_afm_dutch_risicoscore_2.png`,
     description:
       "Met dit mandje beleg je automatisch in 25 makkelijk verhandelbare staatsobligaties binnen de Eurozone.",
     extra:
-      "Deze obligaties hebben allemaal een looptijd van 1 tot 10 jaar. Op deze manier kun je investeren in overheidsleningen voor de middellange termijn en mogelijk een stabiel rendement behalen. Voor meer info en het essenti\u00eble-informatiedocument, klik op onderstaande knop.",
+      "Deze obligaties hebben allemaal een looptijd van 1 tot 10 jaar. Op deze manier kun je investeren in overheidsleningen voor de middellange termijn en mogelijk een stabiel rendement behalen. Voor meer info en het essentiële-informatiedocument, klik op onderstaande knop.",
     link: "https://www.vaneck.com/nl/nl/tswe/",
   },
 ];
@@ -106,7 +117,7 @@ const steps = [
     number: 1,
     title: "Installeer de app",
     description:
-      "Als je de app downloadt dan begin je met een uitgebreide vragenlijst waarin je aangeeft hoe jouw financi\u00eble situatie eruit ziet en hoeveel risico je prettig vindt om te nemen.",
+      "Als je de app downloadt dan begin je met een uitgebreide vragenlijst waarin je aangeeft hoe jouw financiële situatie eruit ziet en hoeveel risico je prettig vindt om te nemen.",
   },
   {
     number: 2,
@@ -140,41 +151,9 @@ const steps = [
   },
 ];
 
-function RiskScoreBadge({ score }: { score: number }) {
-  return (
-    <div className="inline-flex flex-col items-center">
-      <div className="rounded-full border-2 border-gray-300 px-4 py-3 text-center">
-        <p className="text-xs font-bold text-[#211f54] leading-tight">
-          Loop geen
-          <br />
-          onnodig risico.
-        </p>
-        <div className="mt-2 flex gap-0.5">
-          {[1, 2, 3, 4, 5, 6, 7].map((n) => (
-            <span
-              key={n}
-              className={`flex h-5 w-5 items-center justify-center text-[10px] font-bold ${
-                n === score
-                  ? "bg-[#0e3065] text-white"
-                  : "bg-gray-100 text-gray-500"
-              }`}
-            >
-              {n}
-            </span>
-          ))}
-        </div>
-        <p className="mt-1 text-[9px] text-gray-500">
-          Lees het essenti&euml;le-
-          <br />
-          informatiedocument.
-        </p>
-      </div>
-    </div>
-  );
-}
-
 export default function HoeWerktHetContent() {
   const [activeETF, setActiveETF] = useState(0);
+  const [activeProfile, setActiveProfile] = useState(0);
 
   return (
     <>
@@ -184,7 +163,7 @@ export default function HoeWerktHetContent() {
           <h1 className="text-4xl font-bold text-[#211f54] md:text-5xl lg:text-6xl">
             Bij ons beleg je in ETFs
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-[#4a5568] md:text-xl">
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-[#17468f] md:text-xl">
             dit zijn goed gespreide mandjes van aandelen en obligaties.
           </p>
         </div>
@@ -209,10 +188,10 @@ export default function HoeWerktHetContent() {
               <button
                 key={etf.id}
                 onClick={() => setActiveETF(index)}
-                className={`rounded-full border-2 px-5 py-2.5 text-sm font-semibold transition-colors ${
+                className={`border px-5 py-2.5 text-sm font-semibold transition-colors ${
                   activeETF === index
-                    ? "border-[#0e3065] bg-white text-[#0e3065]"
-                    : "border-gray-200 bg-white text-[#4a5568] hover:border-gray-300"
+                    ? "border-[#0e3065] bg-[#0e3065] text-white"
+                    : "border-gray-300 bg-white text-[#4a5568] hover:border-[#0e3065] hover:text-[#0e3065]"
                 }`}
               >
                 {etf.label}
@@ -228,7 +207,7 @@ export default function HoeWerktHetContent() {
                   {etfs[activeETF].name}
                 </h3>
                 <p className="mt-4 text-sm leading-relaxed text-[#4a5568]">
-                  De offici&euml;le naam van deze ETF is{" "}
+                  De officiële naam van deze ETF is{" "}
                   {etfs[activeETF].officialName}.{" "}
                   {etfs[activeETF].description}
                 </p>
@@ -245,23 +224,20 @@ export default function HoeWerktHetContent() {
                 </a>
               </div>
               <div className="flex flex-col items-center gap-6">
-                {/* ETF Illustration placeholder - using an inline SVG chart icon */}
-                <div className="flex h-48 w-48 items-center justify-center rounded-2xl bg-gradient-to-br from-[#e8ecf4] to-[#f7f9ff]">
-                  <svg
-                    className="h-24 w-24 text-[#0e3065] opacity-30"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"
-                    />
-                  </svg>
-                </div>
-                <RiskScoreBadge score={etfs[activeETF].riskScore} />
+                <Image
+                  src={etfs[activeETF].image}
+                  alt={etfs[activeETF].name}
+                  width={280}
+                  height={200}
+                  className="h-auto w-full max-w-[280px] object-contain"
+                />
+                <Image
+                  src={etfs[activeETF].riskScoreImage}
+                  alt={`AFM risicoscore ${etfs[activeETF].riskScore}`}
+                  width={200}
+                  height={80}
+                  className="h-auto w-auto"
+                />
               </div>
             </div>
           </div>
@@ -271,59 +247,80 @@ export default function HoeWerktHetContent() {
       {/* Risk Profile Weighting Section */}
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            {/* Left: Title + description */}
             <div>
               <h2 className="text-3xl font-bold text-[#211f54] md:text-4xl">
                 Weging per risicoprofiel
               </h2>
-              <p className="mt-4 max-w-xl text-base text-[#4a5568]">
+              <p className="mt-4 text-base text-[#4a5568]">
                 VanEck Direct kent vijf risicoprofielen: van zeer offensief tot
                 zeer defensief. Hieronder vind je de bouwstenen voor een goed
                 gespreide beleggingsportefeuille.
               </p>
             </div>
-          </div>
 
-          {/* Profile Cards - Horizontal scroll on mobile, grid on desktop */}
-          <div className="flex gap-5 overflow-x-auto pb-4 lg:grid lg:grid-cols-5 lg:overflow-visible">
-            {riskProfiles.map((profile) => (
-              <div
-                key={profile.name}
-                className="min-w-[240px] flex-shrink-0 rounded-xl border border-gray-200 bg-white p-6 lg:min-w-0"
-              >
-                {/* Thunder woman icon placeholder */}
-                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center">
-                  <svg
-                    className="h-14 w-14 text-[#0e3065] opacity-60"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-center text-lg font-bold text-[#211f54]">
-                  {profile.name}
-                </h3>
-                <div className="mt-4 space-y-3">
-                  {profile.allocations.map((allocation) => (
-                    <div key={allocation.name} className="text-center">
-                      <p className="text-sm font-medium text-[#211f54]">
-                        {allocation.name}
-                      </p>
-                      <p className="text-sm text-[#4a5568]">
-                        {allocation.percentage}
-                      </p>
-                    </div>
-                  ))}
+            {/* Right: Profile card carousel */}
+            <div>
+              <div className="rounded-2xl border border-gray-200 bg-white p-8">
+                <div className="flex flex-col items-center">
+                  <Image
+                    src={`${CDN}/632da3701f293842f95637d0_thunderwoman.png`}
+                    alt="Risicoprofiel illustratie"
+                    width={120}
+                    height={120}
+                    className="h-auto w-28 object-contain"
+                  />
+                  <h3 className="mt-4 text-xl font-bold italic text-[#211f54]">
+                    {riskProfiles[activeProfile].name}
+                  </h3>
+                  <div className="mt-6 w-full space-y-3">
+                    {riskProfiles[activeProfile].allocations.map((allocation) => (
+                      <div
+                        key={allocation.name}
+                        className="flex items-center justify-between border-b border-gray-100 pb-2"
+                      >
+                        <span className="text-sm font-medium text-[#211f54]">
+                          {allocation.name}
+                        </span>
+                        <span className="text-sm font-semibold text-[#4a5568]">
+                          {allocation.percentage}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            ))}
+
+              {/* Navigation arrows */}
+              <div className="mt-6 flex items-center justify-center gap-4">
+                <button
+                  onClick={() => setActiveProfile((p) => Math.max(0, p - 1))}
+                  disabled={activeProfile === 0}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 transition-colors hover:border-[#0e3065] disabled:opacity-30"
+                  aria-label="Vorig profiel"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M15 18l-6-6 6-6" />
+                  </svg>
+                </button>
+                <span className="text-sm text-[#4a5568]">
+                  {activeProfile + 1} / {riskProfiles.length}
+                </span>
+                <button
+                  onClick={() =>
+                    setActiveProfile((p) => Math.min(riskProfiles.length - 1, p + 1))
+                  }
+                  disabled={activeProfile === riskProfiles.length - 1}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 transition-colors hover:border-[#0e3065] disabled:opacity-30"
+                  aria-label="Volgend profiel"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -337,43 +334,21 @@ export default function HoeWerktHetContent() {
               <h2 className="text-3xl font-bold text-[#211f54] md:text-4xl lg:text-5xl">
                 En dan werkt het zo:
               </h2>
-              {/* Roadmap illustration - inline SVG */}
-              <div className="mt-8 flex items-center justify-center">
-                <svg
-                  viewBox="0 0 300 250"
-                  className="h-auto w-full max-w-[300px] text-[#0e3065]"
-                  fill="none"
-                >
-                  {/* Winding path */}
-                  <path
-                    d="M30 220 C30 220 80 220 100 200 C120 180 60 160 80 140 C100 120 160 120 180 100 C200 80 140 60 160 40 C180 20 240 20 270 30"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeDasharray="8 4"
-                    fill="none"
-                    opacity="0.3"
-                  />
-                  {/* Map markers */}
-                  <circle cx="30" cy="220" r="6" fill="#e67e22" />
-                  <circle cx="100" cy="200" r="5" fill="#0e3065" opacity="0.5" />
-                  <circle cx="80" cy="140" r="5" fill="#0e3065" opacity="0.5" />
-                  <circle cx="180" cy="100" r="5" fill="#e67e22" />
-                  <circle cx="160" cy="40" r="5" fill="#0e3065" opacity="0.5" />
-                  <circle cx="270" cy="30" r="8" fill="#0ab400" />
-                  {/* Flag at the end */}
-                  <rect x="270" y="10" width="12" height="8" fill="#0ab400" rx="1" />
-                  <line x1="270" y1="10" x2="270" y2="30" stroke="#0ab400" strokeWidth="2" />
-                </svg>
+              <div className="mt-8">
+                <Image
+                  src={`${CDN}/6658357f326bb15c8b013840_Roadmapping%201.png`}
+                  alt="Stappenplan VanEck Direct"
+                  width={400}
+                  height={350}
+                  className="h-auto w-full max-w-[400px]"
+                />
               </div>
             </div>
 
             {/* Right: Steps */}
             <div className="space-y-4">
               {steps.map((step) => (
-                <div
-                  key={step.number}
-                  className="rounded-xl bg-[#f7f9ff] p-6"
-                >
+                <div key={step.number} className="rounded-xl bg-[#f7f9ff] p-6">
                   <h3 className="text-lg font-bold text-[#0e3065]">
                     {step.number}. {step.title}
                   </h3>

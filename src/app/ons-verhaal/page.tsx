@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import AppScreenshots from "@/components/AppScreenshots";
+
+const CDN = "https://cdn.prod.website-files.com/632d69cdf2cfb16b18ae5be1";
 
 export const metadata: Metadata = {
   title: "Over ons | Het verhaal achter VanEck Direct",
@@ -9,10 +12,12 @@ export const metadata: Metadata = {
 };
 
 const teamMembers = [
-  { name: "Femke van Pijkeren", initials: "FP" },
-  { name: "Jeroen Braak", initials: "JB" },
-  { name: "Shubhra Singh", initials: "SS" },
-  { name: "Fleur Schyns", initials: "FS" },
+  { name: "Femke van Pijkeren", image: `${CDN}/63ee572e659dce632bb61cd8_client4.jpg` },
+  { name: "Jeroen Braak", image: `${CDN}/641431c12d9306cdbbfedc7f_client5.jpg` },
+  { name: "Shubhra Singh", image: `${CDN}/63ee572e659dce4645b61cd2_client3.jpg` },
+  { name: "Fleur Schyns", image: `${CDN}/641431c12d93067efefedc83_client2.jpg` },
+  { name: "Vân Anh Nguyễn", image: `${CDN}/63ee572e659dce4b44b61cd5_client1.jpg` },
+  { name: "Thomas de Vries", image: `${CDN}/642c24dbc2550b52e0e06ad5_client6.jpg` },
 ];
 
 export default function OnsVerhaalPage() {
@@ -25,10 +30,23 @@ export default function OnsVerhaalPage() {
           background: "linear-gradient(to bottom, #f0f2f8, #ffffff)",
         }}
       >
-        <div className="mx-auto max-w-5xl px-6 text-center">
-          <h1 className="font-heading text-3xl font-bold leading-tight text-[#211f54] md:text-5xl">
-            Samen bouwen we aan een betere financiële toekomst voor jou
-          </h1>
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="grid items-center gap-8 lg:grid-cols-2">
+            <div>
+              <h1 className="font-heading text-3xl font-bold leading-tight text-[#211f54] md:text-5xl">
+                Samen bouwen we aan een betere financiële toekomst voor jou
+              </h1>
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src={`${CDN}/65bcc2ec04d123327c6e736c_CeasarBlaadjes.png`}
+                alt="VanEck Direct team"
+                width={400}
+                height={380}
+                className="h-auto w-full max-w-[400px]"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -120,7 +138,7 @@ export default function OnsVerhaalPage() {
       {/* Leadership Quotes */}
       <section className="py-16 lg:py-24">
         <div className="mx-auto flex max-w-5xl flex-col gap-12 px-6">
-          {/* Quote 1 - text left, placeholder right */}
+          {/* Quote 1 - text left, photo right */}
           <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
             <div className="relative rounded-2xl bg-[#f7f9ff] p-8">
               <span className="absolute left-6 top-4 select-none text-6xl font-bold leading-none text-[#0e3065] opacity-20">
@@ -138,18 +156,26 @@ export default function OnsVerhaalPage() {
               </p>
             </div>
             <div className="flex items-center justify-center">
-              <div className="flex h-64 w-full items-center justify-center rounded-2xl bg-[#f2f3f7]">
-                <span className="text-sm text-[#4a5568]">Foto</span>
-              </div>
+              <Image
+                src={`${CDN}/6461dbde446d0cb11095ebbc_Profile%20Picture%20Lies2.jpg`}
+                alt="Lies Oudemans - Director VanEck Direct"
+                width={400}
+                height={400}
+                className="h-64 w-full rounded-2xl object-cover"
+              />
             </div>
           </div>
 
-          {/* Quote 2 - placeholder left, text right */}
+          {/* Quote 2 - photo left, text right */}
           <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
             <div className="flex items-center justify-center md:order-1">
-              <div className="flex h-64 w-full items-center justify-center rounded-2xl bg-[#f2f3f7]">
-                <span className="text-sm text-[#4a5568]">Foto</span>
-              </div>
+              <Image
+                src={`${CDN}/645a0b396fc47533a3d9ef56_PhotoMartijnRozemuller2.jpg`}
+                alt="Martijn Rozemuller - CEO VanEck Europe"
+                width={400}
+                height={400}
+                className="h-64 w-full rounded-2xl object-cover"
+              />
             </div>
             <div className="relative rounded-2xl bg-[#f7f9ff] p-8 md:order-2">
               <span className="absolute left-6 top-4 select-none text-6xl font-bold leading-none text-[#0e3065] opacity-20">
@@ -174,16 +200,20 @@ export default function OnsVerhaalPage() {
           <h2 className="mb-12 text-center font-heading text-2xl font-bold text-[#211f54] md:text-3xl">
             De rest van het team
           </h2>
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
             {teamMembers.map((member) => (
               <div
                 key={member.name}
-                className="flex flex-col items-center rounded-xl bg-[#f7f9ff] p-6 text-center"
+                className="flex flex-col items-center rounded-xl bg-[#f7f9ff] p-4 text-center"
               >
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#0e3065] text-lg font-semibold text-white">
-                  {member.initials}
-                </div>
-                <p className="mt-4 text-sm font-semibold text-[#211f54]">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={80}
+                  height={80}
+                  className="h-16 w-16 rounded-full object-cover"
+                />
+                <p className="mt-3 text-xs font-semibold text-[#211f54]">
                   {member.name}
                 </p>
               </div>

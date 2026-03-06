@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import AppScreenshots from "@/components/AppScreenshots";
+
+const CDN = "https://cdn.prod.website-files.com/632d69cdf2cfb16b18ae5be1";
 
 export const metadata: Metadata = {
   title: "Rendement & Risico | VanEck Direct App",
@@ -85,6 +88,19 @@ export default function RendementPage() {
             app eind 2024 gelanceerd. Hoewel we nog jong zijn, hebben we een
             rijke ETF geschiedenis om op terug te kijken.
           </p>
+        </div>
+      </section>
+
+      {/* Growth chart illustration */}
+      <section className="pb-8">
+        <div className="mx-auto max-w-4xl px-6">
+          <Image
+            src={`${CDN}/677be6099f725bd3bc765253_Growth%201%20(2).svg`}
+            alt="Rendement groei grafiek"
+            width={800}
+            height={400}
+            className="h-auto w-full"
+          />
         </div>
       </section>
 

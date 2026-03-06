@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import AppScreenshots from "@/components/AppScreenshots";
 import FAQContent from "./FAQContent";
+
+const CDN = "https://cdn.prod.website-files.com/632d69cdf2cfb16b18ae5be1";
 
 export const metadata: Metadata = {
   title: "Veelgestelde vragen & contact | FAQ VanEck Direct",
@@ -14,10 +17,23 @@ export default function FaqPage() {
     <>
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-[#f0f2f8] to-white py-16 lg:py-24">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h1 className="text-3xl font-bold text-[#211f54] md:text-4xl lg:text-5xl">
-            Frequently Asked Questions
-          </h1>
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="grid items-center gap-8 lg:grid-cols-2">
+            <div>
+              <h1 className="text-3xl font-bold text-[#211f54] md:text-4xl lg:text-5xl">
+                Veelgestelde vragen
+              </h1>
+            </div>
+            <div className="flex justify-center lg:justify-end">
+              <Image
+                src={`${CDN}/6489d709401ba80a7916fc0d_FAQafbeelding.png`}
+                alt="FAQ illustratie"
+                width={360}
+                height={280}
+                className="h-auto w-full max-w-[360px]"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -26,7 +42,18 @@ export default function FaqPage() {
 
       {/* Contact Block */}
       <section className="bg-[#f2f3f7] py-16 lg:py-24">
-        <div className="mx-auto max-w-3xl px-6 text-center">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="grid items-center gap-8 lg:grid-cols-2">
+            <div className="flex justify-center">
+              <Image
+                src={`${CDN}/6422e2e43cd0d40f2614028e_InItForTheWin.png`}
+                alt="In it for the win"
+                width={360}
+                height={280}
+                className="h-auto w-full max-w-[360px]"
+              />
+            </div>
+            <div>
           <h2 className="text-3xl font-bold text-[#211f54] md:text-4xl">
             Nog steeds vragen?
           </h2>
@@ -56,6 +83,8 @@ export default function FaqPage() {
               <span className="font-semibold text-[#211f54]">Adres: </span>
               Barbara Strozzilaan 310, 1083 HN Amsterdam
             </p>
+          </div>
+            </div>
           </div>
         </div>
       </section>

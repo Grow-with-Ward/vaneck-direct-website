@@ -1,8 +1,11 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import AppScreenshots from "@/components/AppScreenshots";
+
+const CDN = "https://cdn.prod.website-files.com/632d69cdf2cfb16b18ae5be1";
 
 export default function ContactContent() {
   const [formData, setFormData] = useState({
@@ -26,10 +29,26 @@ export default function ContactContent() {
           background: "linear-gradient(to bottom, #f0f2f8, #ffffff)",
         }}
       >
-        <div className="mx-auto max-w-7xl px-6 text-center">
-          <h1 className="font-heading text-4xl font-bold text-[#211f54] md:text-5xl">
-            Contact
-          </h1>
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="grid items-center gap-8 lg:grid-cols-2">
+            <div>
+              <h1 className="font-heading text-4xl font-bold text-[#211f54] md:text-5xl">
+                Contact
+              </h1>
+              <p className="mt-4 text-base text-[#4a5568]">
+                Heb je een vraag of opmerking? We helpen je graag verder.
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <Image
+                src={`${CDN}/6489d69d23529e04d971f377_FAQafbeelding.png`}
+                alt="Contact VanEck Direct"
+                width={360}
+                height={280}
+                className="h-auto w-full max-w-[360px]"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import AppScreenshots from "@/components/AppScreenshots";
+
+const CDN = "https://cdn.prod.website-files.com/632d69cdf2cfb16b18ae5be1";
 
 export const metadata: Metadata = {
   title: "Kosten van beleggen | VanEck Direct app",
@@ -120,24 +123,15 @@ export default function KostenPage() {
               </div>
             </div>
 
-            {/* Chart illustration placeholder */}
+            {/* Cost chart */}
             <div className="flex items-center justify-center">
-              <svg
-                viewBox="0 0 300 250"
-                className="h-auto w-full max-w-[300px]"
-                fill="none"
-              >
-                <rect x="80" y="160" width="30" height="70" rx="4" fill="#0e3065" opacity="0.7" />
-                <rect x="120" y="120" width="30" height="110" rx="4" fill="#e67e22" opacity="0.8" />
-                <rect x="160" y="80" width="30" height="150" rx="4" fill="#0e3065" opacity="0.5" />
-                <rect x="200" y="100" width="30" height="130" rx="4" fill="#0e3065" opacity="0.9" />
-                <line x1="60" y1="230" x2="250" y2="230" stroke="#211f54" strokeWidth="2" opacity="0.3" />
-                <circle cx="95" cy="150" r="4" fill="#e67e22" />
-                <circle cx="135" cy="110" r="4" fill="#0e3065" />
-                <circle cx="175" cy="70" r="4" fill="#e67e22" />
-                <circle cx="215" cy="90" r="4" fill="#0ab400" />
-                <polyline points="95,150 135,110 175,70 215,90" stroke="#e67e22" strokeWidth="2" fill="none" strokeDasharray="4 2" />
-              </svg>
+              <Image
+                src={`${CDN}/672339cfa777fa97c4fc9993_profiel-kosten.png`}
+                alt="Kosten per risicoprofiel"
+                width={400}
+                height={300}
+                className="h-auto w-full max-w-[400px]"
+              />
             </div>
           </div>
         </div>
