@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Merriweather, Open_Sans } from "next/font/google";
 import "./globals.css";
+import TopBanner from "@/components/TopBanner";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const merriweather = Merriweather({
   subsets: ["latin"],
@@ -31,7 +34,12 @@ export default function RootLayout({
   return (
     <html lang="nl">
       <body className={`${merriweather.variable} ${openSans.variable} antialiased`}>
-        {children}
+        <div className="min-h-screen bg-white">
+          <TopBanner />
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

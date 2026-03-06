@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -20,38 +21,38 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-bold text-white">Ons Product &amp; App</h3>
             <ul className="mt-4 space-y-3">
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Hoe werkt het?</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Kostenoverzicht</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">- Ideaal voor ETF Beleggen</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">- Automatisch Beleggen App</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Demo</a></li>
+              <li><Link href="/hoe-werkt-het" className="text-sm text-gray-400 hover:text-white">Hoe werkt het?</Link></li>
+              <li><Link href="/kosten" className="text-sm text-gray-400 hover:text-white">Kostenoverzicht</Link></li>
+              <li><Link href="/etf-beleggingsapp" className="text-sm text-gray-400 hover:text-white">- Ideaal voor ETF Beleggen</Link></li>
+              <li><Link href="/automatisch-beleggen-app" className="text-sm text-gray-400 hover:text-white">- Automatisch Beleggen App</Link></li>
+              <li><Link href="/demo" className="text-sm text-gray-400 hover:text-white">Demo</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="text-sm font-bold text-white">Ons bedrijf</h3>
             <ul className="mt-4 space-y-3">
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Ons verhaal</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">ESG bij VanEck Direct</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Voor Beginnende Beleggers</a></li>
+              <li><Link href="/ons-verhaal" className="text-sm text-gray-400 hover:text-white">Ons verhaal</Link></li>
+              <li><Link href="/duurzaamheid" className="text-sm text-gray-400 hover:text-white">ESG bij VanEck Direct</Link></li>
+              <li><Link href="/beleggingsapp-voor-beginners" className="text-sm text-gray-400 hover:text-white">Voor Beginnende Beleggers</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="text-sm font-bold text-white">Overig</h3>
             <ul className="mt-4 space-y-3">
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">FAQ</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Klachten</a></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white">Contact</a></li>
+              <li><Link href="/faq" className="text-sm text-gray-400 hover:text-white">FAQ</Link></li>
+              <li><Link href="/klachten" className="text-sm text-gray-400 hover:text-white">Klachten</Link></li>
+              <li><Link href="/contact" className="text-sm text-gray-400 hover:text-white">Contact</Link></li>
             </ul>
           </div>
         </div>
         <div className="mt-12 flex flex-col items-center justify-between border-t border-gray-700 py-6 md:flex-row">
           <p className="text-xs text-gray-500">&copy; 2024 VanEck Direct&reg;</p>
           <div className="mt-4 flex flex-wrap gap-6 md:mt-0">
-            <a href="#" className="text-xs text-gray-500 hover:text-white">Toegankelijkheidsverklaring</a>
-            <a href="#" className="text-xs text-gray-500 hover:text-white">Best Execution</a>
-            <a href="#" className="text-xs text-gray-500 hover:text-white">Cookies</a>
-            <a href="#" className="text-xs text-gray-500 hover:text-white">Terms</a>
-            <a href="#" className="text-xs text-gray-500 hover:text-white">Privacy</a>
+            <Link href="/verklaring" className="text-xs text-gray-500 hover:text-white">Toegankelijkheidsverklaring</Link>
+            <Link href="/best-execution" className="text-xs text-gray-500 hover:text-white">Best Execution</Link>
+            <Link href="/cookies" className="text-xs text-gray-500 hover:text-white">Cookies</Link>
+            <Link href="/terms-conditions" className="text-xs text-gray-500 hover:text-white">Terms</Link>
+            <Link href="/privacy" className="text-xs text-gray-500 hover:text-white">Privacy</Link>
           </div>
         </div>
       </div>

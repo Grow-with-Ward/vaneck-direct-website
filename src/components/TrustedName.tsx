@@ -15,7 +15,7 @@ export default function TrustedName() {
             VanEck is wereldwijd een bekende aanbieder van ETFs met miljoenen bestaande klanten. Om dit ook de beginnende belegger aan te kunnen bieden heeft VanEck een app ontwikkeld voor mensen die meer willen dan sparen.
           </p>
           <a
-            href="#"
+            href="/demo"
             className="mt-8 inline-block rounded-[20px] bg-[#0ab400] px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-[#099a00]"
           >
             Download de app
