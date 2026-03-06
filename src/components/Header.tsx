@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,7 +11,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
-        <a href="/" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <Image
             src="/images/63f60d295407276e12936230_LogoVED.svg"
             alt="VanEck Direct"
@@ -18,13 +19,13 @@ export default function Header() {
             height={30}
             className="h-7 w-auto"
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 lg:flex">
-          <a href="#" className="text-[17px] text-[#1f2c3d] hover:text-[#0e3065]">
+          <Link href="/hoe-werkt-het" className="text-[17px] text-[#1f2c3d] hover:text-[#0e3065]">
             Hoe werkt het?
-          </a>
+          </Link>
           <div className="group relative">
             <button className="flex items-center gap-1 text-[17px] text-[#1f2c3d] hover:text-[#0e3065]">
               Rendement &amp; Kosten
@@ -32,6 +33,14 @@ export default function Header() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
+            <div className="invisible absolute left-0 top-full z-50 min-w-[200px] rounded-lg bg-white py-2 shadow-lg group-hover:visible">
+              <Link href="/rendement" className="block px-4 py-2 text-sm text-[#1f2c3d] hover:bg-[#f2f3f7]">
+                Rendement
+              </Link>
+              <Link href="/kosten" className="block px-4 py-2 text-sm text-[#1f2c3d] hover:bg-[#f2f3f7]">
+                Kosten
+              </Link>
+            </div>
           </div>
           <div className="group relative">
             <button className="flex items-center gap-1 text-[17px] text-[#1f2c3d] hover:text-[#0e3065]">
@@ -40,22 +49,33 @@ export default function Header() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
+            <div className="invisible absolute left-0 top-full z-50 min-w-[200px] rounded-lg bg-white py-2 shadow-lg group-hover:visible">
+              <Link href="/faq" className="block px-4 py-2 text-sm text-[#1f2c3d] hover:bg-[#f2f3f7]">
+                FAQ
+              </Link>
+              <Link href="/support" className="block px-4 py-2 text-sm text-[#1f2c3d] hover:bg-[#f2f3f7]">
+                Support
+              </Link>
+              <Link href="/blog" className="block px-4 py-2 text-sm text-[#1f2c3d] hover:bg-[#f2f3f7]">
+                Blog
+              </Link>
+            </div>
           </div>
-          <a href="#" className="text-[17px] text-[#1f2c3d] hover:text-[#0e3065]">
+          <Link href="/ons-verhaal" className="text-[17px] text-[#1f2c3d] hover:text-[#0e3065]">
             Over ons
-          </a>
-          <a href="#" className="text-[17px] text-[#1f2c3d] hover:text-[#0e3065]">
+          </Link>
+          <Link href="/contact" className="text-[17px] text-[#1f2c3d] hover:text-[#0e3065]">
             Contact
-          </a>
+          </Link>
         </nav>
 
         {/* CTA Button */}
-        <a
-          href="#"
+        <Link
+          href="/demo"
           className="hidden rounded-[20px] bg-[#0ab400] px-[25px] py-[12px] text-sm font-semibold text-white transition-colors hover:bg-[#099a00] lg:block"
         >
           Download de app
-        </a>
+        </Link>
 
         {/* Mobile menu button */}
         <button className="lg:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -68,14 +88,17 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="border-t bg-white px-6 py-4 lg:hidden">
           <nav className="flex flex-col gap-4">
-            <a href="#" className="text-[17px] text-[#1f2c3d]">Hoe werkt het?</a>
-            <a href="#" className="text-[17px] text-[#1f2c3d]">Rendement &amp; Kosten</a>
-            <a href="#" className="text-[17px] text-[#1f2c3d]">Support</a>
-            <a href="#" className="text-[17px] text-[#1f2c3d]">Over ons</a>
-            <a href="#" className="text-[17px] text-[#1f2c3d]">Contact</a>
-            <a href="#" className="mt-2 inline-block rounded-[20px] bg-[#0ab400] px-[25px] py-[12px] text-center text-sm font-semibold text-white">
+            <Link href="/hoe-werkt-het" className="text-[17px] text-[#1f2c3d]">Hoe werkt het?</Link>
+            <Link href="/rendement" className="text-[17px] text-[#1f2c3d]">Rendement</Link>
+            <Link href="/kosten" className="text-[17px] text-[#1f2c3d]">Kosten</Link>
+            <Link href="/faq" className="text-[17px] text-[#1f2c3d]">FAQ</Link>
+            <Link href="/support" className="text-[17px] text-[#1f2c3d]">Support</Link>
+            <Link href="/blog" className="text-[17px] text-[#1f2c3d]">Blog</Link>
+            <Link href="/ons-verhaal" className="text-[17px] text-[#1f2c3d]">Over ons</Link>
+            <Link href="/contact" className="text-[17px] text-[#1f2c3d]">Contact</Link>
+            <Link href="/demo" className="mt-2 inline-block rounded-[20px] bg-[#0ab400] px-[25px] py-[12px] text-center text-sm font-semibold text-white">
               Download de app
-            </a>
+            </Link>
           </nav>
         </div>
       )}

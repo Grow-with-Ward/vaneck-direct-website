@@ -27,7 +27,7 @@ export default function CostsSection() {
             Kijk op de kostenpagina om een berekening te maken.
           </p>
           <a
-            href="#"
+            href="/kosten"
             className="shrink-0 rounded-full border-2 border-white px-8 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#0e3065]"
           >
             Naar overzicht
