@@ -125,26 +125,8 @@ const faqData: FAQCategory[] = [
   },
 ];
 
-function ChevronIcon({ isOpen }: { isOpen: boolean }) {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      className={`shrink-0 transition-transform duration-300 ${
-        isOpen ? "rotate-180" : ""
-      }`}
-    >
-      <path
-        d="M5 7.5L10 12.5L15 7.5"
-        stroke="#211f54"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
+function slugify(title: string) {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 }
 
 export default function FAQContent() {
@@ -159,44 +141,73 @@ export default function FAQContent() {
 
   return (
     <section className="py-16 lg:py-24">
-      <div className="mx-auto max-w-3xl px-6">
-        {faqData.map((category, categoryIndex) => (
-          <div key={category.title} className={categoryIndex > 0 ? "mt-12" : ""}>
-            <h2 className="text-xl font-bold text-[#211f54]">
-              {category.title}
-            </h2>
-            <div className="mt-4">
-              {category.items.map((item, itemIndex) => {
-                const key = `${categoryIndex}-${itemIndex}`;
-                const isOpen = openItems[key] || false;
-
-                return (
-                  <div key={key} className="border-b border-gray-200">
-                    <button
-                      onClick={() => toggleItem(key)}
-                      className="flex w-full items-center justify-between py-5 text-left transition-colors hover:text-[#0e3065]"
-                      aria-expanded={isOpen}
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="grid gap-12 lg:grid-cols-[220px,1fr]">
+          {/* Left sidebar */}
+          <aside className="hidden lg:block">
+            <div className="sticky top-8">
+              <ul className="space-y-2">
+                {faqData.map((category) => (
+                  <li key={category.title}>
+                    <a
+                      href={`#${slugify(category.title)}`}
+                      className="block text-sm text-[#4a5568] transition-colors hover:text-[#0e3065]"
                     >
-                      <span className="pr-4 text-base font-medium text-[#211f54]">
-                        {item.question}
-                      </span>
-                      <ChevronIcon isOpen={isOpen} />
-                    </button>
-                    <div
-                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                        isOpen ? "max-h-96 pb-5" : "max-h-0"
-                      }`}
-                    >
-                      <p className="text-sm leading-relaxed text-[#4a5568]">
-                        {item.answer}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
+                      {category.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
+          </aside>
+
+          {/* Right: FAQ accordion */}
+          <div>
+            {faqData.map((category, categoryIndex) => (
+              <div
+                key={category.title}
+                id={slugify(category.title)}
+                className={categoryIndex > 0 ? "mt-12" : ""}
+              >
+                <h2 className="text-xl font-bold text-[#211f54]">
+                  {category.title}
+                </h2>
+                <div className="mt-4">
+                  {category.items.map((item, itemIndex) => {
+                    const key = `${categoryIndex}-${itemIndex}`;
+                    const isOpen = openItems[key] || false;
+
+                    return (
+                      <div key={key} className="border-b border-gray-200">
+                        <button
+                          onClick={() => toggleItem(key)}
+                          className="flex w-full items-center justify-between py-5 text-left transition-colors hover:text-[#0e3065]"
+                          aria-expanded={isOpen}
+                        >
+                          <span className="pr-4 text-base font-medium text-[#211f54]">
+                            {item.question}
+                          </span>
+                          <span className="shrink-0 text-2xl font-light leading-none text-[#211f54]">
+                            {isOpen ? "−" : "+"}
+                          </span>
+                        </button>
+                        <div
+                          className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                            isOpen ? "max-h-96 pb-5" : "max-h-0"
+                          }`}
+                        >
+                          <p className="text-sm leading-relaxed text-[#4a5568]">
+                            {item.answer}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );

@@ -60,27 +60,15 @@ export default function Footer() {
         <div className="mx-auto max-w-7xl px-6">
           <p className="text-xs font-bold text-gray-400">Disclaimer website VanEck Direct</p>
           <p className="mt-3 text-[11px] leading-relaxed text-gray-500">
-            BELANGRIJKE INFORMATIE Dit is een reclame-uiting. Raadpleeg het prospectus van de UCITS en het essenti&euml;le-informatiedocument voordat u definitieve beleggingsbeslissingen neemt. De informatie op deze website is afkomstig van VanEck Asset Management B.V., een besloten vennootschap naar Nederlands recht, statutair gevestigd te Amsterdam. VanEck Asset Management B.V. is een beheermaatschappij van UCITS en beschikt over een vergunning conform artikel 2:69b Wft en is als zodanig geregistreerd bij de AFM en DNB. Deze website is bedoeld voor Nederlandse retailbeleggers in Nederland.
+            <strong>BELANGRIJKE INFORMATIE</strong> Dit is een reclame-uiting. Raadpleeg het prospectus van de UCITS en het essenti&euml;le-informatiedocument voordat u definitieve beleggingsbeslissingen neemt.
           </p>
-          <p className="mt-2 text-[11px] leading-relaxed text-gray-500">&copy; VanEck Asset Management B.V.</p>
-        </div>
-      </div>
-      <div className="bg-[#0e3065] py-8">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-            <div>
-              <p className="text-lg font-bold text-white">DOWNLOAD DE APP</p>
-              <p className="mt-1 text-sm font-medium text-white">Start nu met VanEck Direct</p>
-              <p className="mt-1 text-xs text-gray-300">
-                Laat je geld voor je werken - download onze app nu en begin met beheerd beleggen. Beschikbaar in de App Store en Google Play!
-              </p>
-            </div>
-            <div className="text-right">
-              <p className="text-sm font-medium text-white">Investeer in jouw toekomst</p>
-              <p className="text-xs text-gray-300">Passend bij jouw situatie.</p>
-              <p className="mt-1 text-xs text-gray-400">VanEck, een bekende naam, sinds 1955.</p>
-            </div>
-          </div>
+          <p className="mt-3 text-[11px] leading-relaxed text-gray-500">
+            De informatie op deze website is afkomstig van VanEck Asset Management B.V. (Kamer van Koophandel 34314095), een besloten vennootschap met beperkte aansprakelijkheid naar Nederlands recht, statutair gevestigd te Amsterdam en kantoorhoudende aan de Barbara Strozzilaan 310. VanEck Asset Management B.V. is een beheermaatschappij van UCITS en beschikt over een vergunning conform artikel 2:69b Wft (Wet financieel toezicht) en is als zodanig geregistreerd bij de AFM en DNB. Deze website is bedoeld voor Nederlandse retailbeleggers in Nederland. De informatie is uitsluitend bedoeld om beleggers te voorzien van algemene en voorlopige informatie en mag niet worden opgevat als beleggings-, juridisch of fiscaal advies. VanEck Asset Management B.V. en de aan VanEck Asset Management B.V. verbonden en gelieerde bedrijven (samen &apos;VanEck&apos;) wijzen elke aansprakelijkheid van de hand met betrekking tot beslissingen die de belegger op basis van deze informatie neemt ten aanzien van het kopen, verkopen of aanhouden van beleggingen. Informatie is actueel op de datum van publicatie en kan worden aangepast. Bepaalde verklaringen in dit artikel kunnen ramingen, voorspellingen en andere op de toekomst gerichte verklaringen zijn die niet overeenkomen met de werkelijkheid. Wij achten de informatie die afkomstig is van derden, betrouwbaar. Deze informatie is echter niet onafhankelijk gecontroleerd. De nauwkeurigheid en volledigheid ervan kunnen daarom niet worden gegarandeerd. Er kunnen broker- of transactiekosten in rekening worden gebracht. VanEck geeft geen financieel advies, maar voldoet wel aan de geschiktheidsbeoordeling onder de MiFiD II-richtlijn. Houd er rekening mee dat internet niet altijd een volledig betrouwbare voorziening is voor de overdracht van en toegang tot informatie en dat er storingen, vertragingen en fouten kunnen optreden. VanEck aanvaardt geen aansprakelijkheid voor directe of indirecte schade die verband houdt met het (tijdelijk) niet kunnen openen of gebruiken van deze website, alsmede voor eventuele vertraging of fouten bij het verzenden of ontvangen van berichten, inclusief communicatie en instructies. Deze website biedt geen enkele dienst en/of product aan en is ook niet bedoeld voor ingezetenen van de VS. &apos;Ingezetene van de VS&apos; betekent elke persoon of entiteit die door de Securities and Exchange Commission van tijd tot tijd wordt beschouwd als een &apos;ingezetene van de VS&apos; op grond van Regel 902(k) van de Act van 1933 of andere personen of entiteiten die de bestuurders van VanEck kunnen aanwijzen. Alle rendementsinformatie is gebaseerd op historische gegevens en voorspelt geen toekomstige rendementen. Beleggen brengt risico&apos;s met zich mee, waaronder mogelijk verlies van de hoofdsom.
+          </p>
+          <p className="mt-3 text-[11px] leading-relaxed text-gray-500">
+            Niets in dit materiaal mag in welke vorm dan ook worden verveelvoudigd en er mag ook niet naar worden verwezen in andere publicaties zonder de uitdrukkelijke schriftelijke toestemming van VanEck.
+          </p>
+          <p className="mt-4 text-[11px] leading-relaxed text-gray-500">&copy; VanEck Asset Management B.V.</p>
         </div>
       </div>
     </footer>

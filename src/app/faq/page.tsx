@@ -21,8 +21,11 @@ export default function FaqPage() {
           <div className="grid items-center gap-8 lg:grid-cols-2">
             <div>
               <h1 className="text-3xl font-bold text-[#211f54] md:text-4xl lg:text-5xl">
-                Veelgestelde vragen
+                Frequently Asked Questions
               </h1>
+              <p className="mt-4 text-base text-[#4a5568]">
+                Op deze pagina vind je antwoorden op vragen over VanEck Direct.
+              </p>
             </div>
             <div className="flex justify-center lg:justify-end">
               <Image

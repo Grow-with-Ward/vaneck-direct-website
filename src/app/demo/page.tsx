@@ -10,12 +10,6 @@ export const metadata: Metadata = {
     "Bekijk een voorproefje van de VanEck Direct beleggingsapp. Ontdek hoe eenvoudig automatisch beleggen kan zijn.",
 };
 
-const valueProps = [
-  "Investeer in jouw toekomst",
-  "Passend bij jouw situatie",
-  "VanEck, een bekende naam, sinds 1955",
-];
-
 export default function DemoPage() {
   return (
     <>
@@ -33,31 +27,6 @@ export default function DemoPage() {
           <p className="mt-4 text-lg text-[#4a5568] md:text-xl">
             Hier is vast een voorproefje
           </p>
-        </div>
-      </section>
-
-      {/* Value Props */}
-      <section className="py-16 lg:py-24">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {valueProps.map((prop) => (
-              <div
-                key={prop}
-                className="flex items-start gap-3 rounded-xl bg-[#f7f9ff] p-6"
-              >
-                <Image
-                  src="/images/circle_check.png"
-                  alt="Checkmark"
-                  width={24}
-                  height={24}
-                  className="mt-0.5 flex-shrink-0"
-                />
-                <span className="text-base font-medium text-[#211f54]">
-                  {prop}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
