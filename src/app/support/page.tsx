@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import PlaceholderPage from "@/components/PlaceholderPage";
+import SupportContent from "./SupportContent";
+import CTASection from "@/components/CTASection";
+import AppScreenshots from "@/components/AppScreenshots";
 
 export const metadata: Metadata = {
-  title: "Support - VanEck Direct",
-  description: "Krijg ondersteuning bij het gebruik van VanEck Direct. Vind antwoorden op je vragen.",
+  title: "Vragen & Support | VanEck Direct App",
+  description:
+    "Krijg ondersteuning bij het gebruik van VanEck Direct. Vind antwoorden op je vragen.",
 };
 
 export default function SupportPage() {
   return (
-    <PlaceholderPage
-      title="Support"
-      description="Heb je hulp nodig? Bekijk onze veelgestelde vragen of neem contact met ons op. Wij staan klaar om je te helpen."
-    />
+    <>
+      <SupportContent />
+      <CTASection />
+      <AppScreenshots />
+    </>
   );
 }
