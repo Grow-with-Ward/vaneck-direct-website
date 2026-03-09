@@ -46,10 +46,10 @@ export default function KostenPage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-b from-[#f0f2f8] to-white py-16 lg:py-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h1 className="text-3xl font-bold italic text-[#211f54] md:text-4xl lg:text-5xl">
+          <h1 className="text-3xl font-bold text-[#211f54] md:text-4xl lg:text-5xl">
             Elke euro die jij bespaart aan kosten
           </h1>
-          <p className="mt-4 text-lg text-[#4a5568] md:text-xl">
+          <p className="mt-4 text-lg text-[#17468f] md:text-xl">
             komt ten goede aan jouw rendement.
           </p>
         </div>
@@ -71,7 +71,7 @@ export default function KostenPage() {
                 <p className="text-3xl font-bold text-[#211f54] md:text-4xl">
                   {card.value}
                 </p>
-                <p className="mt-2 text-lg font-semibold text-[#211f54]">
+                <p className="mt-2 text-lg font-semibold text-[#17468f]">
                   {card.label}
                 </p>
                 <p className="mt-4 text-sm leading-relaxed text-[#4a5568]">
@@ -81,7 +81,7 @@ export default function KostenPage() {
             ))}
           </div>
 
-          <p className="mx-auto mt-10 max-w-4xl text-center text-sm italic leading-relaxed text-[#4a5568]">
+          <p className="mx-auto mt-10 max-w-4xl text-center text-sm leading-relaxed text-[#4a5568]">
             VanEck Direct biedt &eacute;&eacute;n van de voordeligere opties aan
             in vermogensbeheer, met totale kosten tussen de 0,68% en 0,72%. Er
             zijn geen kosten voor het openen of opzeggen van je account, en je

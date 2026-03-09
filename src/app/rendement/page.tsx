@@ -73,7 +73,7 @@ export default function RendementPage() {
           <h1 className="text-3xl font-bold text-[#211f54] md:text-4xl lg:text-5xl">
             Resultaten van toen
           </h1>
-          <p className="mt-4 text-lg text-[#4a5568] md:text-xl">
+          <p className="mt-4 text-lg text-[#17468f] md:text-xl">
             zonder beloftes voor straks
           </p>
         </div>
@@ -91,98 +91,114 @@ export default function RendementPage() {
         </div>
       </section>
 
-      {/* Growth chart illustration */}
-      <section className="pb-8">
-        <div className="mx-auto max-w-4xl px-6">
-          <Image
-            src={`${CDN}/677be6099f725bd3bc765253_Growth%201%20(2).svg`}
-            alt="Rendement groei grafiek"
-            width={800}
-            height={400}
-            className="h-auto w-full"
-          />
-        </div>
-      </section>
-
-      {/* Performance Data Grid */}
-      <section className="bg-[#f2f3f7] py-16 lg:py-24">
+      {/* Performance Data Grid — white background, year heading above each card */}
+      <section className="py-8 lg:py-12">
         <div className="mx-auto max-w-5xl px-6">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {performanceData.map((yearData) => (
-              <div
-                key={yearData.year}
-                className="rounded-2xl bg-[#f7f9ff] shadow-sm"
-              >
-                <div className="border-b border-gray-200 px-8 py-5">
-                  <h3 className="text-xl font-bold text-[#211f54]">
-                    {yearData.year}
-                  </h3>
-                </div>
-                <div className="divide-y divide-gray-200">
-                  {yearData.profiles.map((profile) => (
-                    <div
-                      key={profile.name}
-                      className="flex items-center justify-between px-8 py-3"
-                    >
-                      <span className="text-sm font-medium text-[#211f54]">
-                        {profile.name}
-                      </span>
-                      <span
-                        className={`text-sm font-semibold ${
-                          "negative" in profile && profile.negative
-                            ? "text-red-600"
-                            : "text-[#4a5568]"
-                        }`}
+          <div className="grid gap-x-6 gap-y-10 md:grid-cols-3">
+            {/* First row: 2024, 2023, 2022 */}
+            {performanceData.slice(0, 3).map((yearData) => (
+              <div key={yearData.year}>
+                <h3 className="mb-4 text-center text-3xl font-bold text-[#211f54] md:text-4xl">
+                  {yearData.year}
+                </h3>
+                <div className="overflow-hidden rounded-2xl bg-white shadow-sm">
+                  <div className="divide-y divide-gray-100">
+                    {yearData.profiles.map((profile) => (
+                      <div
+                        key={profile.name}
+                        className="flex items-center justify-between px-6 py-3"
                       >
-                        {profile.value}
-                      </span>
-                    </div>
-                  ))}
+                        <span className="text-sm font-semibold text-[#211f54]">
+                          {profile.name}
+                        </span>
+                        <span
+                          className={`text-sm font-medium ${
+                            "negative" in profile && profile.negative
+                              ? "text-red-600"
+                              : "text-[#4a5568]"
+                          }`}
+                        >
+                          {profile.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
+
+            {/* Second row: 2021, 2020, Growth illustration */}
+            {performanceData.slice(3).map((yearData) => (
+              <div key={yearData.year}>
+                <h3 className="mb-4 text-center text-3xl font-bold text-[#211f54] md:text-4xl">
+                  {yearData.year}
+                </h3>
+                <div className="overflow-hidden rounded-2xl bg-white shadow-sm">
+                  <div className="divide-y divide-gray-100">
+                    {yearData.profiles.map((profile) => (
+                      <div
+                        key={profile.name}
+                        className="flex items-center justify-between px-6 py-3"
+                      >
+                        <span className="text-sm font-semibold text-[#211f54]">
+                          {profile.name}
+                        </span>
+                        <span className="text-sm font-medium text-[#4a5568]">
+                          {profile.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {/* Growth illustration in 3rd slot of row 2 */}
+            <div className="flex items-center justify-center">
+              <Image
+                src={`${CDN}/677be6099f725bd3bc765253_Growth%201%20(2).svg`}
+                alt="Rendement groei illustratie"
+                width={357}
+                height={300}
+                className="h-auto w-full max-w-[357px]"
+              />
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Disclaimer Section */}
-      <section className="bg-[#f2f3f7] pb-16 lg:pb-24">
-        <div className="mx-auto max-w-4xl px-6">
-          <p className="text-sm italic leading-relaxed text-[#4a5568]">
-            *Dit betreft gesimuleerde in het verleden behaalde resultaten die
-            geen betrouwbare indicator vormen voor de toekomst.
-          </p>
-
-          <p className="mt-6 text-sm leading-relaxed text-[#4a5568]">
-            We begrijpen dat je naar deze cijfers kijkt om een idee te krijgen
-            van wat je kunt verwachten. Maar het is belangrijk om te weten dat
-            eerdere groei of resultaten van een belegging niet voorspellen hoe
-            deze in de toekomst zal presteren. Tussentijdse stortingen en
-            onttrekkingen worden niet meegenomen in deze gesimuleerde
-            rendementen, om die reden kunnen de door jouw behaalde rendementen
-            afwijken van bovenstaande getallen.
-          </p>
-
-          <p className="mt-6 text-sm leading-relaxed text-[#4a5568]">
-            De rendementen zijn berekend op basis van de NAVs van de ETFs die we
-            daadwerkelijk gebruiken. De Net Asset Value (NAV) geeft de waarde van
-            alle onderliggende beleggingen per ETF weer en wordt dagelijks
-            berekend. In de weergave van deze rendementen hebben we alle kosten
-            meegenomen:
-          </p>
-          <ul className="mt-3 list-disc space-y-1 pl-6 text-sm leading-relaxed text-[#4a5568]">
-            <li>
-              De totale kosten per profiel zijn inclusief 0,5% beheerkosten,
-            </li>
-            <li>
-              De kosten van de fondsen zelf (die al in de ETF-prijzen verwerkt
+          {/* Disclaimer — centered, all italic */}
+          <div className="mt-12 text-center">
+            <p className="text-sm italic leading-relaxed text-[#4a5568]">
+              *Dit betreft gesimuleerde in het verleden behaalde resultaten die
+              geen betrouwbare indicator vormen voor de toekomst.
+            </p>
+            <p className="mt-4 text-sm italic leading-relaxed text-[#4a5568]">
+              We begrijpen dat je naar deze cijfers kijkt om een idee te krijgen
+              van wat je kunt verwachten. Maar het is belangrijk om te weten dat
+              eerdere groei of resultaten van een belegging niet voorspellen hoe
+              deze in de toekomst zal presteren. Tussentijdse stortingen en
+              onttrekkingen worden niet meegenomen in deze gesimuleerde
+              rendementen, om die reden kunnen de door jouw behaalde rendementen
+              afwijken van bovenstaande getallen.
+            </p>
+            <p className="mt-4 text-sm italic leading-relaxed text-[#4a5568]">
+              De rendementen zijn berekend op basis van de NAVs van de ETFs die
+              we daadwerkelijk gebruiken. De Net Asset Value (NAV) geeft de
+              waarde van alle onderliggende beleggingen per ETF weer en wordt
+              dagelijks berekend. In de weergave van deze rendementen hebben we
+              alle kosten meegenomen:
+            </p>
+            <p className="mt-2 text-sm italic leading-relaxed text-[#4a5568]">
+              - De totale kosten per profiel zijn inclusief 0,5% beheerkosten,
+            </p>
+            <p className="mt-1 text-sm italic leading-relaxed text-[#4a5568]">
+              - De kosten van de fondsen zelf (die al in de ETF-prijzen verwerkt
               zijn) en
-            </li>
-            <li>
-              De handelskosten die ontstaan bij het kopen en verkopen van de
+            </p>
+            <p className="mt-1 text-sm italic leading-relaxed text-[#4a5568]">
+              - De handelskosten die ontstaan bij het kopen en verkopen van de
               ETFs.
-            </li>
-          </ul>
+            </p>
+          </div>
         </div>
       </section>
 
