@@ -12,210 +12,177 @@ export const metadata: Metadata = {
 };
 
 const teamMembers = [
-  { name: "Femke van Pijkeren", image: `${CDN}/63ee572e659dce632bb61cd8_client4.jpg` },
-  { name: "Jeroen Braak", image: `${CDN}/641431c12d9306cdbbfedc7f_client5.jpg` },
-  { name: "Shubhra Singh", image: `${CDN}/63ee572e659dce4645b61cd2_client3.jpg` },
-  { name: "Fleur Schyns", image: `${CDN}/641431c12d93067efefedc83_client2.jpg` },
-  { name: "Vân Anh Nguyễn", image: `${CDN}/63ee572e659dce4b44b61cd5_client1.jpg` },
-  { name: "Thomas de Vries", image: `${CDN}/642c24dbc2550b52e0e06ad5_client6.jpg` },
+  { name: "Femke van Pijkeren", role: "Junior Business Analyst" },
+  { name: "Jeroen Braak", role: "Technical Lead" },
+  { name: "Shubhra Singh", role: "Junior Developer" },
+  { name: "Fleur Schyns", role: "Marketing Specialist" },
 ];
 
 export default function OnsVerhaalPage() {
   return (
     <>
-      {/* Hero */}
+      {/* Hero — full-width centered, no image */}
       <section
         className="py-16 lg:py-24"
-        style={{
-          background: "linear-gradient(to bottom, #f0f2f8, #ffffff)",
-        }}
+        style={{ background: "linear-gradient(to bottom, #f0f2f8, #f0f2f8)" }}
       >
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="grid items-center gap-8 lg:grid-cols-2">
-            <div>
-              <h1 className="font-heading text-3xl font-bold leading-tight text-[#211f54] md:text-5xl">
-                Samen bouwen we aan een betere financiële toekomst voor jou
-              </h1>
-            </div>
-            <div className="flex justify-center">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h1 className="font-heading text-4xl font-bold leading-tight text-[#211f54] md:text-5xl lg:text-6xl">
+            Samen bouwen we aan een betere financiële toekomst voor jou.
+          </h1>
+        </div>
+
+        {/* Credentials with laurel badges */}
+        <div className="mx-auto mt-16 flex max-w-3xl flex-col items-center justify-center gap-10 px-6 sm:flex-row sm:gap-16">
+          {[
+            "AFM\nvergunning",
+            "In 2024\ngelanceerd",
+            "Ervaring sinds\n1955",
+          ].map((label) => (
+            <div key={label} className="flex flex-col items-center text-center">
+              <p className="text-lg font-bold text-[#211f54]" style={{ whiteSpace: "pre-line" }}>
+                {label}
+              </p>
               <Image
                 src={`${CDN}/65bcc2ec04d123327c6e736c_CeasarBlaadjes.png`}
-                alt="VanEck Direct team"
-                width={400}
-                height={380}
-                className="h-auto w-full max-w-[400px]"
+                alt=""
+                width={170}
+                height={60}
+                className="mt-2 h-auto w-[170px]"
               />
             </div>
-          </div>
+          ))}
+        </div>
+
+        {/* Mission text below credentials */}
+        <div className="mx-auto mt-16 max-w-2xl px-6 text-center">
+          <p className="text-base leading-relaxed text-[#4a5568]">
+            Wij geloven dat iedereen het recht heeft op financiële vrijheid en
+            controle over hun vermogen. We begrijpen dat beleggen vaak complex
+            en intimiderend kan lijken, en we willen deze barrières wegnemen.
+          </p>
+          <p className="mt-6 text-base leading-relaxed text-[#4a5568]">
+            Met{" "}
+            <a href="/demo" className="text-[#17468f] underline">
+              onze app
+            </a>{" "}
+            willen we een betere financiële toekomst mogelijk maken voor jou.
+            Daarbij zetten we de kracht van Exchange Traded Funds (ETFs) in –
+            mandjes van aandelen en obligaties – om jouw vermogen gestaag te
+            laten groeien.
+          </p>
         </div>
       </section>
 
-      {/* Credentials Bar */}
-      <section className="py-16 lg:py-24">
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 px-6 sm:grid-cols-3">
-          {/* AFM vergunning */}
-          <div className="flex flex-col items-center rounded-xl bg-[#f7f9ff] p-6 text-center">
-            <svg
-              className="mb-4 h-10 w-10 text-[#0e3065]"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M12 2l7 4v6c0 5.25-3.5 9.74-7 11-3.5-1.26-7-5.75-7-11V6l7-4z" />
-              <path d="M9 12l2 2 4-4" />
-            </svg>
-            <span className="text-sm font-semibold text-[#211f54]">
-              AFM vergunning
-            </span>
-          </div>
-
-          {/* In 2024 gelanceerd */}
-          <div className="flex flex-col items-center rounded-xl bg-[#f7f9ff] p-6 text-center">
-            <svg
-              className="mb-4 h-10 w-10 text-[#0e3065]"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M12 2C12 2 8 6 8 10c0 2 1 3 2 4l-1.5 6h7L14 14c1-1 2-2 2-4 0-4-4-8-4-8z" />
-              <path d="M9.5 22h5" />
-              <path d="M10 18h4" />
-            </svg>
-            <span className="text-sm font-semibold text-[#211f54]">
-              In 2024 gelanceerd
-            </span>
-          </div>
-
-          {/* Ervaring sinds 1955 */}
-          <div className="flex flex-col items-center rounded-xl bg-[#f7f9ff] p-6 text-center">
-            <svg
-              className="mb-4 h-10 w-10 text-[#0e3065]"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg>
-            <span className="text-sm font-semibold text-[#211f54]">
-              Ervaring sinds 1955
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission Statement */}
-      <section className="bg-[#f2f3f7] py-16 lg:py-24">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <h2 className="font-heading text-2xl font-bold text-[#211f54] md:text-3xl">
+      {/* Welcome section */}
+      <section className="bg-white py-16 lg:py-24">
+        <div className="mx-auto max-w-2xl px-6 text-center">
+          <h2 className="font-heading text-3xl font-bold text-[#211f54] md:text-4xl">
             Welkom bij VanEck Direct!
           </h2>
           <p className="mt-6 text-base leading-relaxed text-[#4a5568]">
-            Wij geloven dat iedereen het recht heeft op financiële vrijheid. Met
-            VanEck Direct maken we vermogensopbouw toegankelijk door middel van
-            ETFs – zonder dat je zelf een expert hoeft te zijn. Miljoenen mensen
-            wereldwijd beleggen al via VanEck. Nu kun jij dat ook, direct vanuit
-            een app.
-          </p>
-          <p className="mt-6 text-base leading-relaxed text-[#4a5568]">
-            Beleggen kan overweldigend lijken, vooral als je net begint. Daarom
-            hebben we VanEck Direct gebouwd: een app die het simpel maakt om
-            automatisch en gespreid te beleggen, ondersteund door de jarenlange
-            expertise van VanEck.
+            Het VanEck Direct-team heeft, onder de vlag van het grotere VanEck,
+            een beleggingsapp ontwikkeld voor mensen die vandaag willen beginnen
+            met het opbouwen van vermogen voor later. VanEck bestaat sinds 1955
+            en is gespecialiseerd in het bouwen van ETFs, waarin al door{" "}
+            <strong>miljoenen mensen</strong> wereldwijd wordt belegd. Om
+            beleggen in ETFs toegankelijker te maken voor mensen die niet zelf
+            hun beleggingskeuzes willen maken, heeft VanEck deze app
+            ontwikkeld!
           </p>
         </div>
-      </section>
 
-      {/* Leadership Quotes */}
-      <section className="py-16 lg:py-24">
-        <div className="mx-auto flex max-w-5xl flex-col gap-12 px-6">
-          {/* Quote 1 - text left, photo right */}
-          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
-            <div className="relative rounded-2xl bg-[#f7f9ff] p-8">
-              <span className="absolute left-6 top-4 select-none text-6xl font-bold leading-none text-[#0e3065] opacity-20">
-                &ldquo;
-              </span>
-              <p className="relative z-10 mt-6 text-base italic leading-relaxed text-[#4a5568]">
-                Mijn tip voor beginners: begin niet met losse aandelen. Kies
-                voor gespreide mandjes, zodat je risico beter verdeeld is.
+        {/* Quote 1 — Lies Oudemans */}
+        <div className="mx-auto mt-16 max-w-3xl px-6">
+          <div className="flex items-start gap-8">
+            <Image
+              src={`${CDN}/6461dbde446d0cb11095ebbc_Profile%20Picture%20Lies2.jpg`}
+              alt="Lies Oudemans"
+              width={120}
+              height={120}
+              className="h-28 w-28 shrink-0 rounded-full object-cover"
+            />
+            <div>
+              <p className="font-heading text-xl font-bold italic leading-snug text-[#211f54] md:text-2xl">
+                &lsquo;Mijn nummer 1 tip voor beginnende beleggers: start niet
+                met het kopen van losse aandelen. Kies altijd eerst voor het
+                gespreide mandje en dat kan bij VanEck Direct!&rsquo;
               </p>
-              <p className="mt-4 text-base font-bold text-[#211f54]">
-                Lies Oudemans
+              <p className="mt-4 text-sm text-[#4a5568]">
+                Lies Oudemans | Director VanEck Direct
               </p>
-              <p className="text-sm text-[#4a5568]">
-                Director VanEck Direct
-              </p>
-            </div>
-            <div className="flex items-center justify-center">
-              <Image
-                src={`${CDN}/6461dbde446d0cb11095ebbc_Profile%20Picture%20Lies2.jpg`}
-                alt="Lies Oudemans - Director VanEck Direct"
-                width={400}
-                height={400}
-                className="h-64 w-full rounded-2xl object-cover"
-              />
-            </div>
-          </div>
-
-          {/* Quote 2 - photo left, text right */}
-          <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
-            <div className="flex items-center justify-center md:order-1">
-              <Image
-                src={`${CDN}/645a0b396fc47533a3d9ef56_PhotoMartijnRozemuller2.jpg`}
-                alt="Martijn Rozemuller - CEO VanEck Europe"
-                width={400}
-                height={400}
-                className="h-64 w-full rounded-2xl object-cover"
-              />
-            </div>
-            <div className="relative rounded-2xl bg-[#f7f9ff] p-8 md:order-2">
-              <span className="absolute left-6 top-4 select-none text-6xl font-bold leading-none text-[#0e3065] opacity-20">
-                &ldquo;
-              </span>
-              <p className="relative z-10 mt-6 text-base italic leading-relaxed text-[#4a5568]">
-                Met VanEck Direct willen we de barrières bij beleggen wegnemen.
-                Iedereen verdient toegang tot professioneel vermogensbeheer.
-              </p>
-              <p className="mt-4 text-base font-bold text-[#211f54]">
-                Martijn Rozemuller
-              </p>
-              <p className="text-sm text-[#4a5568]">CEO VanEck Europe</p>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Team Grid */}
-      <section className="bg-[#f2f3f7] py-16 lg:py-24">
-        <div className="mx-auto max-w-5xl px-6">
-          <h2 className="mb-12 text-center font-heading text-2xl font-bold text-[#211f54] md:text-3xl">
+        {/* Body text between quotes */}
+        <div className="mx-auto mt-16 max-w-2xl px-6">
+          <p className="text-base leading-relaxed text-[#4a5568]">
+            <strong>
+              Wij zien dat mensen al snel overweldigd raken als ze willen
+              beginnen met beleggen
+            </strong>
+            : Complexe termen, oneindig veel opties en eigenlijk is het toch
+            best spannend om daadwerkelijk die stap te zetten. Hier zagen wij
+            vanuit VanEck een gat in de markt waar we met onze app in zijn
+            gesprongen!
+          </p>
+        </div>
+
+        {/* Quote 2 — Martijn Rozemuller */}
+        <div className="mx-auto mt-16 max-w-3xl px-6">
+          <div className="flex items-start gap-8">
+            <Image
+              src={`${CDN}/645a0b396fc47533a3d9ef56_PhotoMartijnRozemuller2.jpg`}
+              alt="Martijn Rozemuller"
+              width={120}
+              height={120}
+              className="h-28 w-28 shrink-0 rounded-full object-cover"
+            />
+            <div>
+              <p className="font-heading text-xl font-bold italic leading-snug text-[#211f54] md:text-2xl">
+                &lsquo;Met VanEck Direct willen we de barrières bij beleggen
+                wegnemen. Of je nu een beginnende belegger bent of al ervaring
+                hebt, de app biedt een eenvoudige manier om te investeren. Je
+                hoeft niet meer na te denken over het juiste instapmoment of
+                andere ingewikkelde keuzes.&rsquo;
+              </p>
+              <p className="mt-4 text-sm text-[#4a5568]">
+                Martijn Rozemuller | CEO VanEck Europa
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Body text after second quote */}
+        <div className="mx-auto mt-16 max-w-2xl px-6">
+          <p className="text-base leading-relaxed text-[#4a5568]">
+            Wij willen{" "}
+            <a href="/rendement" className="text-[#17468f] underline">
+              beginnende beleggers
+            </a>{" "}
+            helpen. In tegenstelling tot veel andere platformen, zullen we je
+            niet verleiden tot het doen van veel aan- en verkopen. Het is al
+            vaak genoeg bewezen dat dit ten koste gaat van jouw rendement.{" "}
+            <strong>
+              Des te langer en rustiger jij blijft beleggen, des te beter voor
+              je vermogen.
+            </strong>
+          </p>
+        </div>
+
+        {/* Team */}
+        <div className="mx-auto mt-20 max-w-3xl px-6">
+          <h3 className="text-center font-heading text-2xl font-bold text-[#211f54]">
             De rest van het team
-          </h2>
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
+          </h3>
+          <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4">
             {teamMembers.map((member) => (
-              <div
-                key={member.name}
-                className="flex flex-col items-center rounded-xl bg-[#f7f9ff] p-4 text-center"
-              >
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  width={80}
-                  height={80}
-                  className="h-16 w-16 rounded-full object-cover"
-                />
-                <p className="mt-3 text-xs font-semibold text-[#211f54]">
+              <div key={member.name} className="text-center">
+                <p className="text-sm font-semibold text-[#211f54]">
                   {member.name}
                 </p>
+                <p className="mt-1 text-sm text-[#4a5568]">{member.role}</p>
               </div>
             ))}
           </div>
