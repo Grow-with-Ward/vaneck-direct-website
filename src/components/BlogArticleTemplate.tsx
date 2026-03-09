@@ -6,6 +6,7 @@ const CDN = "https://cdn.prod.website-files.com/632d69cdf2cfb16b18ae5be1";
 export interface RelatedArticle {
   title: string;
   href: string;
+  thumbnail?: string;
 }
 
 export interface QuoteBlockProps {
@@ -115,9 +116,18 @@ export default function BlogArticleTemplate({
                 <Link
                   key={article.title}
                   href={article.href}
-                  className="flex items-center justify-between rounded-xl border border-gray-200 bg-white p-5 transition-colors hover:bg-[#f7f9ff]"
+                  className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 transition-colors hover:bg-[#f7f9ff]"
                 >
-                  <span className="text-base font-medium text-[#211f54]">
+                  {article.thumbnail && (
+                    <Image
+                      src={article.thumbnail}
+                      alt={article.title}
+                      width={96}
+                      height={64}
+                      className="h-16 w-24 shrink-0 rounded-lg object-cover"
+                    />
+                  )}
+                  <span className="flex-1 text-base font-medium text-[#211f54]">
                     {article.title}
                   </span>
                   <svg

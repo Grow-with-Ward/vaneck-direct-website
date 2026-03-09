@@ -1,17 +1,33 @@
+import Image from "next/image";
 import { QuoteBlock } from "@/components/BlogArticleTemplate";
+import RendementCalculator from "@/components/RendementCalculator";
 
-const MARTINPHOTO =
-  "https://cdn.prod.website-files.com/632d69cdf2cfb16b18ae5be1/645a0b396fc47533a3d9ef56_PhotoMartijnRozemuller2.jpg";
-const LIESPHOTO =
-  "https://cdn.prod.website-files.com/632d69cdf2cfb16b18ae5be1/6461dbde446d0cb11095ebbc_Profile%20Picture%20Lies2.jpg";
+const BLOG_CDN = "https://cdn.prod.website-files.com/67a4c9c9d6efc1ab3da054f0";
+
+const MARTINPHOTO = `${BLOG_CDN}/698c5b45ef506d391c61279f_martijn.png`;
+const LIESPHOTO = `${BLOG_CDN}/698c58bc3ad1b70078b8ef0b_foto%20lies.png`;
+
+const T: Record<string, string> = {
+  "waarom-van-eck-direct-begonnen": `${BLOG_CDN}/698da3f7ad50b9a7b689a42a_vaneck%20direct%20app%20(1).png`,
+  "goede-voornemens-financiele-gezondheid": `${BLOG_CDN}/698b2ea75237a5f2b0c6ce8c_financieel%20gezond%20.png`,
+  "beleggen-gemiste-kans-nederland": `${BLOG_CDN}/698b2c3223ae7b9a58fcea2d_beleggen%20of%20sparen.png`,
+  "hoe-beleggen-zonder-ervaring": `${BLOG_CDN}/698b2743fac4d0c29073c309_beleggen%20als%20cadeau%20(2).png`,
+  "schenk-financiele-rust": `${BLOG_CDN}/698b1fae981317b89995e97c_beleggen%20als%20cadeau%20(1).png`,
+  "4-dingen-startende-belegger": `${BLOG_CDN}/698aff5e92db1253312178e4_beginnen%20met%20beleggen.png`,
+  "rendement-berekenen": `${BLOG_CDN}/68da8f843d2c74b16987e99e_image%20(4).png`,
+  "wat-is-een-etf": `${BLOG_CDN}/68cd6717b77de41103bc84fa_Wat%20is%20een%20ETF.png`,
+  "etf-kopen-2": `${BLOG_CDN}/68cd67f48681bbb0413f1bfb_wat%20is%20een%20ETF%20vierkant.png`,
+  "automatisch-maandelijks-beleggen": `${BLOG_CDN}/68c18d3f3836f84ce9f871f1_main%20image%20seo%20artikel%202.png`,
+};
 
 export interface BlogArticleData {
   title: string;
   subtitle?: string;
   description: string;
+  thumbnail?: string;
   content: React.ReactNode;
   footnotes?: string[];
-  relatedArticles?: { title: string; href: string }[];
+  relatedArticles?: { title: string; href: string; thumbnail?: string }[];
 }
 
 export const blogArticles: Record<string, BlogArticleData> = {
@@ -20,6 +36,7 @@ export const blogArticles: Record<string, BlogArticleData> = {
     subtitle: "De oplossing voor de 'niet-beleggende' belegger",
     description:
       "VanEck lanceert een innovatieve beleggingsapp voor de beginnende belegger. Ontdek waarom we VanEck Direct zijn begonnen.",
+    thumbnail: T["waarom-van-eck-direct-begonnen"],
     footnotes: [
       "AFM: https://www.afm.nl/en/sector/actueel/2022/maart/meer-nederlanders-beleggen-sparen",
       "Fiscale informatie is primair bedoeld voor beleggers die Nederlands belastingplichtig zijn. Verstrekte informatie betreft geen fiscaal advies. Raadpleeg waar nodig een fiscaal adviseur.",
@@ -29,14 +46,17 @@ export const blogArticles: Record<string, BlogArticleData> = {
       {
         title: "Goede voornemens & financiële gezondheid",
         href: "/blog/goede-voornemens-financiele-gezondheid",
+        thumbnail: T["goede-voornemens-financiele-gezondheid"],
       },
       {
         title: "Beleggen: de gemiste kans van Nederland?",
         href: "/blog/beleggen-gemiste-kans-nederland",
+        thumbnail: T["beleggen-gemiste-kans-nederland"],
       },
       {
         title: "Hoe kan je beginnen met beleggen zonder ervaring?",
         href: "/blog/hoe-beleggen-zonder-ervaring",
+        thumbnail: T["hoe-beleggen-zonder-ervaring"],
       },
     ],
     content: (
@@ -151,18 +171,22 @@ export const blogArticles: Record<string, BlogArticleData> = {
     subtitle: "Beginnen met beleggen als goed voornemen",
     description:
       "Ontdek hoe beleggen als goed voornemen je financiële gezondheid op de lange termijn kan verbeteren.",
+    thumbnail: T["goede-voornemens-financiele-gezondheid"],
     relatedArticles: [
       {
         title: "Hoe kan je beginnen met beleggen zonder ervaring?",
         href: "/blog/hoe-beleggen-zonder-ervaring",
+        thumbnail: T["hoe-beleggen-zonder-ervaring"],
       },
       {
         title: "Beleggen: de gemiste kans van Nederland?",
         href: "/blog/beleggen-gemiste-kans-nederland",
+        thumbnail: T["beleggen-gemiste-kans-nederland"],
       },
       {
         title: "Waarom zijn we VanEck Direct begonnen?",
         href: "/blog/waarom-van-eck-direct-begonnen",
+        thumbnail: T["waarom-van-eck-direct-begonnen"],
       },
     ],
     content: (
@@ -241,18 +265,22 @@ export const blogArticles: Record<string, BlogArticleData> = {
     title: "Beleggen: De gemiste kans van Nederland?",
     description:
       "Ontdek waarom de meeste Nederlanders nog steeds niet beleggen en wat de risico's zijn van níét beleggen.",
+    thumbnail: T["beleggen-gemiste-kans-nederland"],
     relatedArticles: [
       {
         title: "Hoe kan je beginnen met beleggen zonder ervaring?",
         href: "/blog/hoe-beleggen-zonder-ervaring",
+        thumbnail: T["hoe-beleggen-zonder-ervaring"],
       },
       {
         title: "Goede voornemens & financiële gezondheid",
         href: "/blog/goede-voornemens-financiele-gezondheid",
+        thumbnail: T["goede-voornemens-financiele-gezondheid"],
       },
       {
         title: "Waarom zijn we VanEck Direct begonnen?",
         href: "/blog/waarom-van-eck-direct-begonnen",
+        thumbnail: T["waarom-van-eck-direct-begonnen"],
       },
     ],
     content: (
@@ -343,6 +371,7 @@ export const blogArticles: Record<string, BlogArticleData> = {
     subtitle: "Beginnen met beleggen zonder ervaring: VanEck Direct uitgelegd",
     description:
       "Ontdek hoe VanEck Direct beleggen toegankelijk maakt voor beginners, zonder ingewikkelde keuzes.",
+    thumbnail: T["hoe-beleggen-zonder-ervaring"],
     footnotes: [
       "Rabobank: https://www.rabobank.nl/kennis/d011495324-jongeren-beleggen-vaker-dan-ouderen-26-beleggers-heeft-cryptos",
     ],
@@ -350,14 +379,17 @@ export const blogArticles: Record<string, BlogArticleData> = {
       {
         title: "Beleggen: de gemiste kans van Nederland?",
         href: "/blog/beleggen-gemiste-kans-nederland",
+        thumbnail: T["beleggen-gemiste-kans-nederland"],
       },
       {
         title: "Goede voornemens & financiële gezondheid",
         href: "/blog/goede-voornemens-financiele-gezondheid",
+        thumbnail: T["goede-voornemens-financiele-gezondheid"],
       },
       {
         title: "Waarom zijn we VanEck Direct begonnen?",
         href: "/blog/waarom-van-eck-direct-begonnen",
+        thumbnail: T["waarom-van-eck-direct-begonnen"],
       },
     ],
     content: (
@@ -451,18 +483,22 @@ export const blogArticles: Record<string, BlogArticleData> = {
     title: "Schenk jezelf financiële rust - en de kans op rendement",
     description:
       "Ontdek hoe je jezelf financiële rust kunt schenken door slim en gespreid te beleggen met VanEck Direct.",
+    thumbnail: T["schenk-financiele-rust"],
     relatedArticles: [
       {
         title: "Hoe kan je beginnen met beleggen zonder ervaring?",
         href: "/blog/hoe-beleggen-zonder-ervaring",
+        thumbnail: T["hoe-beleggen-zonder-ervaring"],
       },
       {
         title: "Beleggen: de gemiste kans van Nederland?",
         href: "/blog/beleggen-gemiste-kans-nederland",
+        thumbnail: T["beleggen-gemiste-kans-nederland"],
       },
       {
         title: "Goede voornemens & financiële gezondheid",
         href: "/blog/goede-voornemens-financiele-gezondheid",
+        thumbnail: T["goede-voornemens-financiele-gezondheid"],
       },
     ],
     content: (
@@ -543,18 +579,22 @@ export const blogArticles: Record<string, BlogArticleData> = {
     subtitle: "Starten met beleggen? Onze app VanEck Direct maakt dat eenvoudig!",
     description:
       "4 essentiële beleggingsprincipes voor elke startende belegger, van spreiding tot risicoprofielen.",
+    thumbnail: T["4-dingen-startende-belegger"],
     relatedArticles: [
       {
         title: "Schenk jezelf financiële rust & de kans op rendement",
         href: "/blog/schenk-financiele-rust",
+        thumbnail: T["schenk-financiele-rust"],
       },
       {
         title: "Hoe kan je beginnen met beleggen zonder ervaring?",
         href: "/blog/hoe-beleggen-zonder-ervaring",
+        thumbnail: T["hoe-beleggen-zonder-ervaring"],
       },
       {
         title: "Beleggen: de gemiste kans van Nederland?",
         href: "/blog/beleggen-gemiste-kans-nederland",
+        thumbnail: T["beleggen-gemiste-kans-nederland"],
       },
     ],
     content: (
@@ -677,6 +717,7 @@ export const blogArticles: Record<string, BlogArticleData> = {
     subtitle: "Bereken eenvoudig het verwachte rendement van beleggen",
     description:
       "Lees meer over hoe je beleggingsrendement berekent en ontdek de kracht van samengestelde rente.",
+    thumbnail: T["rendement-berekenen"],
     content: (
       <>
         <p className="mt-4 text-base leading-relaxed text-[#4a5568]">
@@ -692,6 +733,8 @@ export const blogArticles: Record<string, BlogArticleData> = {
           dertig jaar uitgroeien tot een aanzienlijk vermogen. Dat geeft inzicht
           en helpt je om bewuster keuzes te maken voor jouw financiële toekomst.
         </p>
+
+        <RendementCalculator />
 
         <h2 className="font-heading mb-4 mt-10 text-2xl font-bold text-[#211f54]">
           Veelgestelde vragen over rendement
@@ -767,6 +810,7 @@ export const blogArticles: Record<string, BlogArticleData> = {
     title: "Wat is een ETF",
     description:
       "Alles over Exchange Traded Funds (ETFs): hoe ze werken, de voordelen en waarom ze geschikt zijn voor beleggers.",
+    thumbnail: T["wat-is-een-etf"],
     content: (
       <>
         <p className="mt-4 text-base leading-relaxed text-[#4a5568]">
@@ -810,6 +854,15 @@ export const blogArticles: Record<string, BlogArticleData> = {
           bedrijven tegelijk. Dat zorgt vaak voor minder schommelingen en daarbij
           kun je meer rust ervaren in het beleggen.
         </p>
+        <div className="my-8">
+          <Image
+            src={`${BLOG_CDN}/68c41ad6d7caa84ceb9ee300_seo%20ariktel%203%20image%203.png`}
+            alt="Uitleg verschil tussen ETF versus aandelen"
+            width={900}
+            height={500}
+            className="w-full rounded-xl"
+          />
+        </div>
 
         <h2 className="font-heading mb-4 mt-10 text-2xl font-bold text-[#211f54]">
           Waarom kiezen voor ETF beleggen
@@ -835,6 +888,15 @@ export const blogArticles: Record<string, BlogArticleData> = {
           <li>— Je volgt de index, je verslaat hem niet</li>
           <li>— Koersschommelingen zijn altijd mogelijk</li>
         </ul>
+        <div className="my-8">
+          <Image
+            src={`${BLOG_CDN}/68c42423efdb0ff4b9a75a45_voor%20en%20nadelen%20ETF.png`}
+            alt="Voor- en nadelen van ETF beleggen"
+            width={900}
+            height={500}
+            className="w-full rounded-xl"
+          />
+        </div>
 
         <h2 className="font-heading mb-4 mt-10 text-2xl font-bold text-[#211f54]">
           Zijn ETFs veilig?
@@ -879,6 +941,7 @@ export const blogArticles: Record<string, BlogArticleData> = {
     title: "ETF kopen",
     description:
       "Ontdek hoe je eenvoudig een ETF koopt, waar je op moet letten en hoe je kunt beginnen via een beleggingsplatform.",
+    thumbnail: T["etf-kopen-2"],
     content: (
       <>
         <p className="mt-4 text-base leading-relaxed text-[#4a5568]">
@@ -917,6 +980,15 @@ export const blogArticles: Record<string, BlogArticleData> = {
           Check altijd of het platform betrouwbaar is en of de ETFs die jij wilt
           kopen beschikbaar zijn.
         </p>
+        <div className="my-8">
+          <Image
+            src={`${BLOG_CDN}/68c4187b7234bfe0995f1ded_main%20image%20seo%20artikel%203.png`}
+            alt="ETF kopen via een beleggingsplatform"
+            width={900}
+            height={500}
+            className="w-full rounded-xl"
+          />
+        </div>
 
         <h2 className="font-heading mb-4 mt-10 text-2xl font-bold text-[#211f54]">
           Waar moet je op letten als je een ETF koopt?
@@ -943,6 +1015,15 @@ export const blogArticles: Record<string, BlogArticleData> = {
             misschien zelfs herbelegt, of juist niet
           </li>
         </ul>
+        <div className="my-8">
+          <Image
+            src={`${BLOG_CDN}/68c4190b5a2f2cca20dd70ef_seo%20ariktel%203%20image%202.png`}
+            alt="Waar moet je op letten bij het kopen van een ETF"
+            width={900}
+            height={500}
+            className="w-full rounded-xl"
+          />
+        </div>
 
         <h2 className="font-heading mb-4 mt-10 text-2xl font-bold text-[#211f54]">
           Wanneer koop je een ETF?
@@ -1024,6 +1105,7 @@ export const blogArticles: Record<string, BlogArticleData> = {
     title: "Automatisch maandelijks beleggen",
     description:
       "Ontdek wat automatisch beleggen is, hoe het werkt bij ETFs en of het iets is voor jouw situatie.",
+    thumbnail: T["automatisch-maandelijks-beleggen"],
     content: (
       <>
         <p className="mt-4 text-base leading-relaxed text-[#4a5568]">
@@ -1070,6 +1152,15 @@ export const blogArticles: Record<string, BlogArticleData> = {
           soms wat goedkoper. Dit haalt de scherpe randjes van koersschommelingen
           af!
         </p>
+        <div className="my-8">
+          <Image
+            src={`${BLOG_CDN}/68c18eaf87ec06d0f49644d7_main%20image%20seo%20artikel%202.png.jpg`}
+            alt="Hoe werkt automatisch maandelijks beleggen"
+            width={900}
+            height={500}
+            className="w-full rounded-xl"
+          />
+        </div>
 
         <h2 className="font-heading mb-4 mt-10 text-2xl font-bold text-[#211f54]">
           Voor- en nadelen automatisch beleggen
@@ -1094,6 +1185,15 @@ export const blogArticles: Record<string, BlogArticleData> = {
             zelf willen bijsturen
           </li>
         </ul>
+        <div className="my-8">
+          <Image
+            src={`${BLOG_CDN}/68c40d52236959687edde162_seo%20ariktel%202%20image%202.png`}
+            alt="Voor- en nadelen automatisch beleggen"
+            width={900}
+            height={500}
+            className="w-full rounded-xl"
+          />
+        </div>
 
         <h2 className="font-heading mb-4 mt-10 text-2xl font-bold text-[#211f54]">
           Is automatisch beleggen iets voor jou?
