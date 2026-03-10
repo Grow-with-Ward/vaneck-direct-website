@@ -246,16 +246,16 @@ export default function FAQContent() {
   return (
     <section className="py-16 lg:py-24">
       <div className="mx-auto max-w-5xl px-6">
-        <div className="grid gap-12 lg:grid-cols-[220px,1fr]">
+        <div className="grid gap-12 lg:grid-cols-[220px_1fr]">
           {/* Left sidebar */}
           <aside className="hidden lg:block">
             <div className="sticky top-8">
-              <ul className="space-y-2">
+              <ul className="space-y-1">
                 {faqData.map((category) => (
                   <li key={category.title}>
                     <a
                       href={`#${slugify(category.title)}`}
-                      className="block text-sm text-[#4a5568] transition-colors hover:text-[#0e3065]"
+                      className="block rounded-md px-3 py-1.5 text-sm text-[#4a5568] transition-colors hover:bg-[#f7f9ff] hover:text-[#0e3065]"
                     >
                       {category.title}
                     </a>
@@ -285,13 +285,13 @@ export default function FAQContent() {
                       <div key={key} className="border-b border-gray-200">
                         <button
                           onClick={() => toggleItem(key)}
-                          className="flex w-full items-center justify-between py-5 text-left transition-colors hover:text-[#0e3065]"
+                          className="flex w-full items-center justify-between py-4 text-left transition-colors hover:text-[#0e3065]"
                           aria-expanded={isOpen}
                         >
-                          <span className="pr-4 text-base font-medium text-[#211f54]">
+                          <span className="pr-4 text-sm font-medium text-[#211f54]">
                             {item.question}
                           </span>
-                          <span className="shrink-0 text-2xl font-light leading-none text-[#211f54]">
+                          <span className="shrink-0 text-lg font-light leading-none text-[#211f54]">
                             {isOpen ? "\u2212" : "+"}
                           </span>
                         </button>
