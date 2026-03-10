@@ -48,7 +48,11 @@ export default function DemoPage() {
           </div>
 
           <div className="mt-10 flex items-center justify-center gap-4">
-            <Link href="/demo">
+            <Link
+              href="https://apps.apple.com/nl/app/vaneck-direct/id1545588838"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="/images/app_store.png"
                 alt="Download in de App Store"
@@ -57,7 +61,11 @@ export default function DemoPage() {
                 className="h-auto w-auto"
               />
             </Link>
-            <Link href="/demo">
+            <Link
+              href="https://play.google.com/store/apps/details?id=com.vaneck.direct"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Image
                 src="/images/google_play.png"
                 alt="Download via Google Play"
