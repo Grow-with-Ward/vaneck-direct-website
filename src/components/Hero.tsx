@@ -39,7 +39,12 @@ export default function Hero() {
 
           {/* App Store Buttons */}
           <div className="mt-8 flex flex-wrap gap-4">
-            <a href="/demo" className="inline-block">
+            <a
+              href="https://apps.apple.com/nl/app/vaneck-direct/id1545588838"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
               <Image
                 src="/images/app_store.png"
                 alt="Download on the App Store"
@@ -48,7 +53,12 @@ export default function Hero() {
                 className="h-[52px] w-auto"
               />
             </a>
-            <a href="/demo" className="inline-block">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.vaneck.direct"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
               <Image
                 src="/images/google_play.png"
                 alt="Get it on Google Play"

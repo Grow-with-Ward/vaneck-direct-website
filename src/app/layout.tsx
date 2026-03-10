@@ -4,6 +4,7 @@ import "./globals.css";
 import TopBanner from "@/components/TopBanner";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { DownloadModalProvider } from "@/components/DownloadModal";
 
 const merriweather = Merriweather({
   subsets: ["latin"],
@@ -34,12 +35,14 @@ export default function RootLayout({
   return (
     <html lang="nl">
       <body className={`${merriweather.variable} ${openSans.variable} antialiased`}>
-        <div className="min-h-screen bg-white">
-          <TopBanner />
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </div>
+        <DownloadModalProvider>
+          <div className="min-h-screen bg-white">
+            <TopBanner />
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </div>
+        </DownloadModalProvider>
       </body>
     </html>
   );

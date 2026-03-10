@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useDownloadModal } from "@/components/DownloadModal";
 
 const CDN = "https://cdn.prod.website-files.com/632d69cdf2cfb16b18ae5be1";
 
@@ -60,6 +61,8 @@ export default function SEOLandingContent({
   showFinalCTA = false,
   showAppScreenshots = false,
 }: SEOLandingContentProps) {
+  const { openModal } = useDownloadModal();
+
   return (
     <>
       {/* Hero Section */}
@@ -100,7 +103,12 @@ export default function SEOLandingContent({
 
               {/* App Store Buttons */}
               <div className="mt-8 flex flex-wrap gap-4">
-                <a href="/demo" className="inline-block">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.vaneck.direct"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
                   <Image
                     src="/images/google_play.png"
                     alt="Get it on Google Play"
@@ -109,7 +117,12 @@ export default function SEOLandingContent({
                     className="h-[52px] w-auto"
                   />
                 </a>
-                <a href="/demo" className="inline-block">
+                <a
+                  href="https://apps.apple.com/nl/app/vaneck-direct/id1545588838"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
                   <Image
                     src="/images/app_store.png"
                     alt="Download on the App Store"
@@ -280,7 +293,12 @@ export default function SEOLandingContent({
               </div>
 
               <div className="mt-8 flex flex-wrap gap-4">
-                <a href="/demo" className="inline-block">
+                <a
+                  href="https://apps.apple.com/nl/app/vaneck-direct/id1545588838"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
                   <Image
                     src="/images/app_store.png"
                     alt="Download on the App Store"
@@ -289,7 +307,12 @@ export default function SEOLandingContent({
                     className="h-[52px] w-auto"
                   />
                 </a>
-                <a href="/demo" className="inline-block">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.vaneck.direct"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
                   <Image
                     src="/images/google_play.png"
                     alt="Get it on Google Play"
@@ -353,12 +376,12 @@ export default function SEOLandingContent({
               doorlopen en je account in te richten. En dan pakken wij het vanaf daar
               verder op!
             </p>
-            <a
-              href="/demo"
-              className="mt-8 inline-block rounded-[20px] bg-[#0ab400] px-10 py-3.5 text-base font-semibold text-white transition-colors hover:bg-[#099a00]"
+            <button
+              onClick={openModal}
+              className="mt-8 rounded-[20px] bg-[#0ab400] px-10 py-3.5 text-base font-semibold text-white transition-colors hover:bg-[#099a00]"
             >
               Download de app
-            </a>
+            </button>
           </div>
         </section>
       )}

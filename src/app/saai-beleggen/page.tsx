@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import CTASection from "@/components/CTASection";
 import AppScreenshots from "@/components/AppScreenshots";
+import DownloadButton from "@/components/DownloadButton";
 
 export const metadata: Metadata = {
   title: "Saaiste beleggingsapp voor automatisch, langetermijn beleggen",
@@ -48,7 +49,12 @@ export default function SaaiBeleggenPage() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <a href="/demo" className="inline-block">
+              <a
+                href="https://apps.apple.com/nl/app/vaneck-direct/id1545588838"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
                 <Image
                   src="/images/app_store.png"
                   alt="Download on the App Store"
@@ -57,7 +63,12 @@ export default function SaaiBeleggenPage() {
                   className="h-[52px] w-auto"
                 />
               </a>
-              <a href="/demo" className="inline-block">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.vaneck.direct"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
                 <Image
                   src="/images/google_play.png"
                   alt="Get it on Google Play"
@@ -236,12 +247,7 @@ export default function SaaiBeleggenPage() {
               klanten. Om dit ook de beginnende belegger aan te kunnen bieden heeft VanEck
               een app ontwikkeld voor mensen die meer willen dan sparen.
             </p>
-            <a
-              href="/demo"
-              className="mt-8 inline-block rounded-[20px] bg-[#0ab400] px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-[#099a00]"
-            >
-              Download de app
-            </a>
+            <DownloadButton className="mt-8 rounded-[20px] bg-[#0ab400] px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-[#099a00]" />
           </div>
           <div className="flex justify-center">
             <Image

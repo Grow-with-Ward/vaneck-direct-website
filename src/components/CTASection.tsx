@@ -1,4 +1,10 @@
+"use client";
+
+import { useDownloadModal } from "@/components/DownloadModal";
+
 export default function CTASection() {
+  const { openModal } = useDownloadModal();
+
   return (
     <section className="py-20">
       <div className="mx-auto max-w-4xl px-6 text-center">
@@ -9,14 +15,16 @@ export default function CTASection() {
           met VanEck Direct.
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-[#4a5568]">
-          Download vandaag de app en ga er even rustig voor zitten om de stappen te doorlopen en je account in te richten. En dan pakken wij het vanaf daar verder op!
+          Download vandaag de app en ga er even rustig voor zitten om de stappen
+          te doorlopen en je account in te richten. En dan pakken wij het vanaf
+          daar verder op!
         </p>
-        <a
-          href="/demo"
+        <button
+          onClick={openModal}
           className="mt-8 inline-block rounded-[20px] bg-[#0ab400] px-10 py-3.5 text-base font-semibold text-white transition-colors hover:bg-[#099a00]"
         >
           Download de app
-        </a>
+        </button>
       </div>
     </section>
   );

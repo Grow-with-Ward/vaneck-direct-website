@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useDownloadModal } from "@/components/DownloadModal";
 
 export default function TrustedName() {
+  const { openModal } = useDownloadModal();
+
   return (
     <section className="bg-[#f7f9ff] py-20">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 lg:grid-cols-2">
@@ -14,12 +19,12 @@ export default function TrustedName() {
           <p className="mt-4 text-base leading-relaxed text-[#4a5568]">
             VanEck is wereldwijd een bekende aanbieder van ETFs met miljoenen bestaande klanten. Om dit ook de beginnende belegger aan te kunnen bieden heeft VanEck een app ontwikkeld voor mensen die meer willen dan sparen.
           </p>
-          <a
-            href="/demo"
+          <button
+            onClick={openModal}
             className="mt-8 inline-block rounded-[20px] bg-[#0ab400] px-8 py-3 text-base font-semibold text-white transition-colors hover:bg-[#099a00]"
           >
             Download de app
-          </a>
+          </button>
         </div>
         <div className="flex justify-center">
           <Image

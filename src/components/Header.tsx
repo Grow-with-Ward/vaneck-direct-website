@@ -3,9 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useDownloadModal } from "@/components/DownloadModal";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { openModal } = useDownloadModal();
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
@@ -70,12 +72,12 @@ export default function Header() {
         </nav>
 
         {/* CTA Button */}
-        <Link
-          href="/demo"
+        <button
+          onClick={openModal}
           className="hidden rounded-[20px] bg-[#0ab400] px-[25px] py-[12px] text-sm font-semibold text-white transition-colors hover:bg-[#099a00] lg:block"
         >
           Download de app
-        </Link>
+        </button>
 
         {/* Mobile menu button */}
         <button className="lg:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -96,9 +98,12 @@ export default function Header() {
             <Link href="/blog" className="text-[17px] text-[#1f2c3d]">Blog</Link>
             <Link href="/ons-verhaal" className="text-[17px] text-[#1f2c3d]">Over ons</Link>
             <Link href="/contact" className="text-[17px] text-[#1f2c3d]">Contact</Link>
-            <Link href="/demo" className="mt-2 inline-block rounded-[20px] bg-[#0ab400] px-[25px] py-[12px] text-center text-sm font-semibold text-white">
+            <button
+              onClick={() => { setMobileMenuOpen(false); openModal(); }}
+              className="mt-2 w-full rounded-[20px] bg-[#0ab400] px-[25px] py-[12px] text-center text-sm font-semibold text-white transition-colors hover:bg-[#099a00]"
+            >
               Download de app
-            </Link>
+            </button>
           </nav>
         </div>
       )}
