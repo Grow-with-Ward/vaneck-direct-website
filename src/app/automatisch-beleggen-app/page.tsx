@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Automatisch beleggen app voor de lange termijn | VanEck Direct",
   description:
     "Beleg automatisch met de VanEck Direct app. Stel een maandelijkse inleg in en laat de experts het werk doen.",
+  alternates: {
+    canonical: "/automatisch-beleggen-app",
+  },
 };
 
 export default function AutomatischBeleggenAppPage() {

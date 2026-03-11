@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Best Execution Beleid | VanEck Direct",
   description:
     "Lees het orderuitvoeringsbeleid (Best Execution) van VanEck Direct.",
+  alternates: {
+    canonical: "/best-execution",
+  },
 };
 
 export default function BestExecutionPage() {

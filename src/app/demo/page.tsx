@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Demo | Ontdek hoe de VanEck Direct app werkt",
   description:
     "Bekijk een voorproefje van de VanEck Direct beleggingsapp. Ontdek hoe eenvoudig automatisch beleggen kan zijn.",
+  alternates: {
+    canonical: "/demo",
+  },
 };
 
 export default function DemoPage() {

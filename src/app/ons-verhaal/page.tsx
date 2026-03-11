@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Over ons | Het verhaal achter VanEck Direct",
   description:
     "Leer het team achter VanEck Direct kennen. Sinds 1955 actief in vermogensbeheer, gelanceerd in 2024.",
+  alternates: {
+    canonical: "/ons-verhaal",
+  },
 };
 
 const teamMembers = [

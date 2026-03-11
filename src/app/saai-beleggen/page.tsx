@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Saaiste beleggingsapp voor automatisch, langetermijn beleggen",
   description:
     "Saai beleggen is slim beleggen. Ontdek de kracht van geduldig en gespreid beleggen met VanEck Direct.",
+  alternates: {
+    canonical: "/saai-beleggen",
+  },
 };
 
 export default function SaaiBeleggenPage() {
@@ -196,13 +199,13 @@ export default function SaaiBeleggenPage() {
               </p>
               <div className="mt-4 space-y-3">
                 <div className="flex items-start gap-3">
-                  <Image src="/images/notification.png" alt="" width={24} height={24} className="mt-0.5 h-6 w-6 shrink-0" />
+                  <Image src="/images/notification.png" alt="Waarschuwing" width={24} height={24} className="mt-0.5 h-6 w-6 shrink-0" />
                   <p className="text-[#4a5568]">
                     De beleggingswereld is complex en gebruikt moeilijke woorden als: short, swap, spread of yield.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Image src="/images/notification.png" alt="" width={24} height={24} className="mt-0.5 h-6 w-6 shrink-0" />
+                  <Image src="/images/notification.png" alt="Waarschuwing" width={24} height={24} className="mt-0.5 h-6 w-6 shrink-0" />
                   <p className="text-[#4a5568]">
                     Bij sommige producten, zoals opties of futures, kan je de hele waarde van je inleg kwijtraken.
                   </p>
@@ -215,13 +218,13 @@ export default function SaaiBeleggenPage() {
               </p>
               <div className="mt-4 space-y-3">
                 <div className="flex items-start gap-3">
-                  <Image src="/images/circle_check.png" alt="" width={24} height={24} className="mt-0.5 h-6 w-6 shrink-0" />
+                  <Image src="/images/circle_check.png" alt="Vinkje" width={24} height={24} className="mt-0.5 h-6 w-6 shrink-0" />
                   <p className="text-[#4a5568]">
                     Breed gespreid en automatisch beleggen, zodat jij er niet naar om hoeft te kijken.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Image src="/images/circle_check.png" alt="" width={24} height={24} className="mt-0.5 h-6 w-6 shrink-0" />
+                  <Image src="/images/circle_check.png" alt="Vinkje" width={24} height={24} className="mt-0.5 h-6 w-6 shrink-0" />
                   <p className="text-[#4a5568]">
                     Beleggen zonder keuzestress, jargon en tegen een eerlijke prijs.
                   </p>

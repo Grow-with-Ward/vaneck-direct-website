@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Rendement & Risico | VanEck Direct App",
   description:
     "Bekijk de gesimuleerde rendementen van VanEck Direct per risicoprofiel van 2020-2024.",
+  alternates: {
+    canonical: "/rendement",
+  },
 };
 
 const performanceData = [

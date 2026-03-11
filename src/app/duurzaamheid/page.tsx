@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Duurzaamheid | VanEck Direct",
   description:
     "Ontdek hoe VanEck Direct omgaat met ESG en duurzaam beleggen. Screening en uitsluiting op basis van ESG factoren.",
+  alternates: {
+    canonical: "/duurzaamheid",
+  },
 };
 
 export default function DuurzaamheidPage() {

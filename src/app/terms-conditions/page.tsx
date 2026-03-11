@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Terms & Conditions | VanEck Direct",
   description:
     "Lees de algemene voorwaarden van VanEck Direct voor het gebruik van de website en applicatie.",
+  alternates: {
+    canonical: "/terms-conditions",
+  },
 };
 
 export default function TermsConditionsPage() {

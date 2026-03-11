@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 flex flex-col items-center justify-between border-t border-gray-700 py-6 md:flex-row">
-          <p className="text-xs text-gray-500">&copy; 2024 VanEck Direct&reg;</p>
+          <p className="text-xs text-gray-500">&copy; {new Date().getFullYear()} VanEck Direct&reg;</p>
           <div className="mt-4 flex flex-wrap gap-6 md:mt-0">
             <Link href="/verklaring" className="text-xs text-gray-500 hover:text-white">Toegankelijkheidsverklaring</Link>
             <Link href="/best-execution" className="text-xs text-gray-500 hover:text-white">Best Execution</Link>
