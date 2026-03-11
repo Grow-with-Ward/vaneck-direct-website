@@ -158,7 +158,7 @@ export default function HoeWerktHetContent() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-[#f0f2f8] to-white py-16 lg:py-24">
+      <section className="bg-gradient-to-b from-[#f0f2f8] to-white pb-4 pt-16 lg:pb-6 lg:pt-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <h1 className="text-4xl font-bold text-[#211f54] md:text-5xl lg:text-6xl">
             Bij ons beleg je in ETFs
@@ -170,7 +170,7 @@ export default function HoeWerktHetContent() {
       </section>
 
       {/* Our 4 ETFs Section */}
-      <section className="py-16 lg:py-24">
+      <section className="pt-6 pb-16 lg:pt-8 lg:pb-24">
         <div className="mx-auto max-w-5xl px-6">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-[#211f54] md:text-4xl">
@@ -188,7 +188,7 @@ export default function HoeWerktHetContent() {
               <button
                 key={etf.id}
                 onClick={() => setActiveETF(index)}
-                className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition-colors ${
+                className={`rounded-lg border px-5 py-2.5 text-sm font-semibold transition-colors ${
                   activeETF === index
                     ? "border-[#0ab400] bg-[#0ab400] text-white"
                     : "border-gray-300 bg-white text-[#4a5568] hover:border-[#0ab400] hover:text-[#0ab400]"
@@ -247,90 +247,91 @@ export default function HoeWerktHetContent() {
       {/* Risk Profile Weighting Section */}
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <h2 className="text-3xl font-bold text-[#211f54] md:text-4xl">
-                Weging per risicoprofiel
-              </h2>
-              <p className="mt-4 max-w-xl text-base text-[#4a5568]">
-                VanEck Direct kent vijf risicoprofielen: van zeer offensief tot
-                zeer defensief. Hieronder vind je de bouwstenen voor een goed
-                gespreide beleggingsportefeuille.
-              </p>
-            </div>
-            {/* Navigation arrows at top-right */}
-            <div className="flex shrink-0 items-center gap-2">
-              <button
-                onClick={() => setActiveProfile((p) => Math.max(0, p - 1))}
-                disabled={activeProfile === 0}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 transition-colors hover:border-[#0e3065] disabled:opacity-30"
-                aria-label="Vorig profiel"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M15 18l-6-6 6-6" />
-                </svg>
-              </button>
-              <button
-                onClick={() =>
-                  setActiveProfile((p) => Math.min(riskProfiles.length - 1, p + 1))
-                }
-                disabled={activeProfile === riskProfiles.length - 1}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 transition-colors hover:border-[#0e3065] disabled:opacity-30"
-                aria-label="Volgend profiel"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M9 18l6-6-6-6" />
-                </svg>
-              </button>
-            </div>
+          <div>
+            <h2 className="text-3xl font-bold text-[#211f54] md:text-4xl">
+              Weging per risicoprofiel
+            </h2>
+            <p className="mt-4 max-w-xl text-base text-[#4a5568]">
+              VanEck Direct kent vijf risicoprofielen: van zeer offensief tot
+              zeer defensief. Hieronder vind je de bouwstenen voor een goed
+              gespreide beleggingsportefeuille.
+            </p>
           </div>
 
           {/* All 5 profile cards in a horizontal scrollable row */}
-          <div className="mt-8 overflow-x-auto">
-            <div className="flex gap-4" style={{ minWidth: "max-content" }}>
-              {riskProfiles.map((profile, index) => (
-                <div
-                  key={profile.name}
-                  className={`w-56 shrink-0 rounded-2xl border bg-white p-6 transition-all ${
-                    activeProfile === index
-                      ? "border-[#0ab400] shadow-md"
-                      : "border-gray-200 shadow-sm"
-                  }`}
-                  onClick={() => setActiveProfile(index)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => e.key === "Enter" && setActiveProfile(index)}
-                >
-                  <div className="flex flex-col items-center">
-                    <Image
-                      src={`${CDN}/632da3701f293842f95637d0_thunderwoman.png`}
-                      alt="Risicoprofiel illustratie"
-                      width={80}
-                      height={80}
-                      className="h-auto w-16 object-contain"
-                    />
-                    <h3 className="mt-3 text-center text-sm font-bold italic text-[#211f54]">
-                      {profile.name}
-                    </h3>
-                    <div className="mt-4 w-full space-y-2">
-                      {profile.allocations.map((allocation) => (
-                        <div
-                          key={allocation.name}
-                          className="flex items-center justify-between border-b border-gray-100 pb-1.5"
-                        >
-                          <span className="text-xs font-medium text-[#211f54]">
-                            {allocation.name}
-                          </span>
-                          <span className="text-xs font-semibold text-[#4a5568]">
-                            {allocation.percentage}
-                          </span>
-                        </div>
-                      ))}
+          <div className="relative mt-8">
+            {/* Left arrow */}
+            <button
+              onClick={() => setActiveProfile((p) => Math.max(0, p - 1))}
+              disabled={activeProfile === 0}
+              className="absolute -left-4 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white border border-gray-300 shadow-md transition-colors hover:border-[#0e3065] disabled:opacity-30"
+              aria-label="Vorig profiel"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+
+            <div className="overflow-x-auto scrollbar-hide">
+              <div className="flex gap-5 pb-2" style={{ minWidth: "max-content" }}>
+                {riskProfiles.map((profile, index) => (
+                  <div
+                    key={profile.name}
+                    className={`w-72 shrink-0 rounded-2xl border bg-white p-8 transition-all ${
+                      activeProfile === index
+                        ? "border-[#0ab400] shadow-md"
+                        : "border-gray-200 shadow-sm"
+                    }`}
+                    onClick={() => setActiveProfile(index)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => e.key === "Enter" && setActiveProfile(index)}
+                  >
+                    <div className="flex flex-col items-center">
+                      <Image
+                        src={`${CDN}/632da3701f293842f95637d0_thunderwoman.png`}
+                        alt="Risicoprofiel illustratie"
+                        width={100}
+                        height={100}
+                        className="h-auto w-20 object-contain"
+                      />
+                      <h3 className="mt-3 text-center text-base font-bold italic text-[#211f54]">
+                        {profile.name}
+                      </h3>
+                      <div className="mt-4 w-full space-y-3">
+                        {profile.allocations.map((allocation) => (
+                          <div
+                            key={allocation.name}
+                            className="flex items-center justify-between border-b border-gray-100 pb-2"
+                          >
+                            <span className="text-sm font-medium text-[#211f54]">
+                              {allocation.name}
+                            </span>
+                            <span className="text-sm font-semibold text-[#4a5568]">
+                              {allocation.percentage}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
+
+            {/* Right arrow */}
+            <button
+              onClick={() =>
+                setActiveProfile((p) => Math.min(riskProfiles.length - 1, p + 1))
+              }
+              disabled={activeProfile === riskProfiles.length - 1}
+              className="absolute -right-4 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white border border-gray-300 shadow-md transition-colors hover:border-[#0e3065] disabled:opacity-30"
+              aria-label="Volgend profiel"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
           </div>
         </div>
       </section>
@@ -358,7 +359,7 @@ export default function HoeWerktHetContent() {
             {/* Right: Steps */}
             <div className="space-y-4">
               {steps.map((step) => (
-                <div key={step.number} className="rounded-xl bg-white p-6 shadow-sm">
+                <div key={step.number} className="rounded-xl bg-[#e8f0fe] p-6">
                   <h3 className="text-lg font-bold text-[#0e3065]">
                     {step.number}. {step.title}
                   </h3>

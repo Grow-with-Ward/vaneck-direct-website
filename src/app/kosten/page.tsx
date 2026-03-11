@@ -117,7 +117,7 @@ export default function KostenPage() {
                     <span className="font-semibold text-[#211f54]">
                       {profile.name}
                     </span>
-                    <span className="text-[#4a5568]">{profile.cost}</span>
+                    <span className="font-bold text-[#4a5568]">{profile.cost}</span>
                   </div>
                 ))}
               </div>

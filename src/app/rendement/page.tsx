@@ -80,7 +80,7 @@ export default function RendementPage() {
       </section>
 
       {/* Intro Paragraph */}
-      <section className="py-16 lg:py-24">
+      <section className="py-8 lg:py-10">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <p className="text-base leading-relaxed text-[#4a5568] md:text-lg">
             Hierbij onze netto rendementen*, dat is na aftrek van kosten.{" "}
@@ -101,8 +101,8 @@ export default function RendementPage() {
                 <h3 className="mb-4 text-center text-3xl font-bold text-[#211f54] md:text-4xl">
                   {yearData.year}
                 </h3>
-                <div className="overflow-hidden rounded-2xl bg-white shadow-sm">
-                  <div className="divide-y divide-gray-100">
+                <div className="overflow-hidden rounded-2xl bg-[#e8f0fe]">
+                  <div className="divide-y divide-blue-100">
                     {yearData.profiles.map((profile) => (
                       <div
                         key={profile.name}
@@ -133,8 +133,8 @@ export default function RendementPage() {
                 <h3 className="mb-4 text-center text-3xl font-bold text-[#211f54] md:text-4xl">
                   {yearData.year}
                 </h3>
-                <div className="overflow-hidden rounded-2xl bg-white shadow-sm">
-                  <div className="divide-y divide-gray-100">
+                <div className="overflow-hidden rounded-2xl bg-[#e8f0fe]">
+                  <div className="divide-y divide-blue-100">
                     {yearData.profiles.map((profile) => (
                       <div
                         key={profile.name}

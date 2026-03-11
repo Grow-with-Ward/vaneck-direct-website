@@ -11,7 +11,7 @@ export default function ContactContent() {
         className="py-16 lg:py-24"
         style={{ background: "linear-gradient(to bottom, #f0f2f8, #ffffff)" }}
       >
-        <div className="mx-auto max-w-5xl px-6">
+        <div className="mx-auto max-w-7xl px-6">
           <div className="overflow-hidden rounded-2xl bg-white shadow-sm">
             <div className="grid lg:grid-cols-2">
               {/* Left: contact info */}

@@ -100,7 +100,7 @@ export default function OnsVerhaalPage() {
               alt="Lies Oudemans"
               width={120}
               height={120}
-              className="h-28 w-28 shrink-0 rounded-full object-cover"
+              className="h-28 w-28 shrink-0 rounded-2xl object-cover"
             />
             <div>
               <p className="font-heading text-xl font-bold italic leading-snug text-[#211f54] md:text-2xl">
@@ -137,7 +137,7 @@ export default function OnsVerhaalPage() {
               alt="Martijn Rozemuller"
               width={120}
               height={120}
-              className="h-28 w-28 shrink-0 rounded-full object-cover"
+              className="h-28 w-28 shrink-0 rounded-2xl object-cover"
             />
             <div>
               <p className="font-heading text-xl font-bold italic leading-snug text-[#211f54] md:text-2xl">

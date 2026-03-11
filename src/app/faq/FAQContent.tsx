@@ -255,7 +255,7 @@ export default function FAQContent() {
                   <li key={category.title}>
                     <a
                       href={`#${slugify(category.title)}`}
-                      className="block rounded-md px-3 py-1.5 text-sm text-[#4a5568] transition-colors hover:bg-[#f7f9ff] hover:text-[#0e3065]"
+                      className="block rounded-md px-3 py-1.5 text-sm font-semibold text-[#4a5568] transition-colors hover:bg-[#f7f9ff] hover:text-[#0e3065]"
                     >
                       {category.title}
                     </a>

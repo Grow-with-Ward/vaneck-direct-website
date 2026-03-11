@@ -9,6 +9,7 @@ import { DownloadModalProvider } from "@/components/DownloadModal";
 const merriweather = Merriweather({
   subsets: ["latin"],
   weight: ["400", "700"],
+  style: ["normal", "italic"],
   variable: "--font-merriweather",
 });
 
