@@ -107,8 +107,24 @@ No canonical link tags are set. This can cause duplicate content issues if pages
 - Only 3 pages use `priority` on above-the-fold images
 - Some images may be served from CDN without proper sizing
 - The `/public/images/` directory is 12 MB — verify all images are optimized and compressed
+- **`footer_mockup.png` is 2.2 MB** — used in `AppScreenshots.tsx` and `SEOLandingContent.tsx`
+- **`eenveiligeplek.png` is 2.7 MB** — used in `TrustedName.tsx` and `saai-beleggen/page.tsx`
+- **GIF images use `unoptimized` flag** — `InvestMonthly.tsx:31` and `saai-beleggen/page.tsx:171` bypass Next.js image optimization
 
-**Action:** Audit images, compress oversized assets, and add `priority` to all above-the-fold hero images.
+**Action:** Compress the two oversized PNGs to WebP/AVIF. Convert GIFs to optimized video (MP4/WebM) or remove the `unoptimized` flag. Add `priority` to all above-the-fold hero images.
+
+### 2.8 Empty Alt Text on Functional Icons
+Several images in `saai-beleggen/page.tsx` have `alt=""` but are not purely decorative — they convey meaning (notification icons, checkmark icons):
+- `saai-beleggen/page.tsx:199` — `notification.png` with `alt=""`
+- `saai-beleggen/page.tsx:218` — `circle_check.png` with `alt=""`
+
+**Action:** Add descriptive alt text to icons that convey meaning. Keep `alt=""` only for truly decorative images.
+
+### 2.9 Unused Default Assets in `/public/`
+Template-default SVGs from Next.js scaffolding are still present and unused:
+- `next.svg`, `vercel.svg`, `file.svg`, `window.svg`, `globe.svg`
+
+**Action:** Delete these files before launch.
 
 ---
 
