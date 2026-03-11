@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "De beleggingsapp voor beginners | VanEck Direct",
   description:
     "VanEck Direct is de ideale beleggingsapp voor beginners. Leer hoe je eenvoudig kunt starten met beleggen.",
+  alternates: {
+    canonical: "/beleggingsapp-voor-beginners",
+  },
 };
 
 export default function BeleggingsappVoorBeginnersPage() {

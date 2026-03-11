@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Privacybeleid | Jouw Gegevens Veilig bij VanEck Direct",
   description:
     "Lees het privacybeleid van VanEck Direct en hoe wij omgaan met uw persoonsgegevens.",
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 export default function PrivacyPage() {

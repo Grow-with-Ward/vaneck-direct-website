@@ -29,6 +29,9 @@ export function DownloadModalProvider({ children }: { children: ReactNode }) {
           onClick={() => setIsOpen(false)}
         >
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="download-modal-title"
             className="relative w-full max-w-3xl overflow-hidden rounded-2xl bg-white shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
@@ -49,7 +52,7 @@ export function DownloadModalProvider({ children }: { children: ReactNode }) {
                 <span className="text-xs font-bold uppercase tracking-widest text-[#0ab400]">
                   Download de app
                 </span>
-                <h2 className="font-heading mt-3 text-2xl font-bold leading-tight text-[#211f54] md:text-3xl">
+                <h2 id="download-modal-title" className="font-heading mt-3 text-2xl font-bold leading-tight text-[#211f54] md:text-3xl">
                   Start nu met VanEck Direct
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-[#4a5568]">

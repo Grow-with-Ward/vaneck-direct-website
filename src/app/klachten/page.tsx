@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Klachten & Feedback | VanEck Direct",
   description:
     "Klachten- en feedbackprocedure van VanEck Direct. Lees hoe u een klacht kunt indienen.",
+  alternates: {
+    canonical: "/klachten",
+  },
 };
 
 export default function KlachtenPage() {

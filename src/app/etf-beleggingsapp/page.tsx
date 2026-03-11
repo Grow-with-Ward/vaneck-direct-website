@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Beleg slim op de lange termijn met de beleggingsapp VanEck Direct",
   description:
     "VanEck Direct is de ideale ETF beleggingsapp. Beleg gespreid in ETFs zonder keuzestress.",
+  alternates: {
+    canonical: "/etf-beleggingsapp",
+  },
 };
 
 export default function EtfBeleggingsappPage() {

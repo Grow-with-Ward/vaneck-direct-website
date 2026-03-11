@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Vragen & Support | VanEck Direct App",
   description:
     "Krijg ondersteuning bij het gebruik van VanEck Direct. Vind antwoorden op je vragen.",
+  alternates: {
+    canonical: "/support",
+  },
 };
 
 export default function SupportPage() {
