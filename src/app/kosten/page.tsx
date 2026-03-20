@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Kosten van beleggen | VanEck Direct app",
   description:
     "Bekijk de transparante kosten van VanEck Direct: beheerkosten 0,5%, fondskosten 0,18%-0,22%, en slechts \u20ac1 bij opname.",
+  alternates: {
+    canonical: "/kosten",
+  },
 };
 
 const costCards = [

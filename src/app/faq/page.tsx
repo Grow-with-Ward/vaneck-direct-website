@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Veelgestelde vragen & contact | FAQ VanEck Direct",
   description:
     "Vind antwoorden op veelgestelde vragen over VanEck Direct: kosten, beleggen, account aanmaken en meer.",
+  alternates: {
+    canonical: "/faq",
+  },
 };
 
 export default function FaqPage() {

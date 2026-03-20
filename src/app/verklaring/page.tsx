@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "Toegankelijkheidsverklaring | VanEck Direct",
   description:
     "Toegankelijkheidsverklaring van VanEck Direct over de toegankelijkheid van de mobiele app.",
+  alternates: {
+    canonical: "/verklaring",
+  },
 };
 
 export default function VerklaringPage() {

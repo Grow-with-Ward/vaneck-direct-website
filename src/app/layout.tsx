@@ -20,11 +20,15 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://direct.vaneck.com"),
   title: "VanEck Direct - Automatische beleggingsapp voor gespreid beleggen",
   description:
     "VanEck Direct - ETF beleggingsapp voor beginnende beleggers - automatisch & gespreid",
   icons: {
     icon: "/favicon.ico",
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 
@@ -38,9 +42,15 @@ export default function RootLayout({
       <body className={`${merriweather.variable} ${openSans.variable} antialiased`}>
         <DownloadModalProvider>
           <div className="min-h-screen bg-white">
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-[#0e3065] focus:px-4 focus:py-2 focus:text-white"
+            >
+              Ga naar inhoud
+            </a>
             <TopBanner />
             <Header />
-            <main>{children}</main>
+            <main id="main-content">{children}</main>
             <Footer />
           </div>
         </DownloadModalProvider>

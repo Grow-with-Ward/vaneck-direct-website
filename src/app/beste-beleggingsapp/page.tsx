@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Beste beleggingsapp in Nederland voor beheerd beleggen",
   description:
     "VanEck Direct: de beste beleggingsapp voor automatisch en gespreid beleggen in ETFs, tegen lage kosten.",
+  alternates: {
+    canonical: "/beste-beleggingsapp",
+  },
 };
 
 export default function BesteBeleggingsappPage() {

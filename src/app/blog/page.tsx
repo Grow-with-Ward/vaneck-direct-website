@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Blog | VanEck Direct over ETFs, saai beleggen & goed spreiden",
   description:
     "Lees het laatste nieuws en artikelen over beleggen, ETFs en VanEck Direct.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 const blogPosts = [
